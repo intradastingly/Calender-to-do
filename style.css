@@ -14,6 +14,18 @@ aside {
     height: 100%;
 }
 
+input {
+    height: 3rem;
+}
+
+button {
+    width: 100%;
+    padding: .5rem;
+}
+
+.todo {
+    margin: .5rem 0;
+}
 
 /* Time display */
 .timeSection {
