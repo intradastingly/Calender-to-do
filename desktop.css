@@ -34,3 +34,36 @@ button {
     margin: .5rem 0;
 }
 
+<<<<<<< HEAD
+=======
+/* Time display */
+.timeSection {
+    padding: 5rem 0rem 5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time {
+    font-size: 2rem;
+}
+.dateMonth {
+    padding-left: 0.5rem;
+}
+.timeMonth {
+    display: flex;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+}
+>>>>>>> a6e7b1122390d6c9acad2bd5f3f46a48de16e49a
