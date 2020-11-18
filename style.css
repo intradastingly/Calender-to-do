@@ -1,7 +1,10 @@
+@media (max-width: 70rem) {
+
 * {
     padding: 0;
     margin: 0;
 }
+
 html {
     height: 100%;
 }
@@ -14,6 +17,9 @@ aside {
     height: 100%;
 }
 
+table {
+    display: none;
+}
 
 
 
@@ -28,4 +34,6 @@ aside {
 
 .column {
     flex-direction: column;
+}
+
 }
