@@ -19,8 +19,7 @@ function eventListenersButtons(){
              if (input === "") {
                  alert("please add something");  
                  li.parentNode.removeChild(li);
-         }
-         
+         }    
  }
  
  function removeLastItemFromList(){

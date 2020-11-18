@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta chrset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./sidebar.css">
@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="./global.css">
     <script defer src="./main.js"></script>
     <script defer src="./timeWeekdaysDisplay.js"></script>
-    <script defer src="./eventCallers"></script>
+    <script defer src="./eventCallers.js"></script>
     <script defer src="./toDoListScript.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
 </head>
 
-<body class="flex">
+<body class="flex column">
+    <h1>Calender</h1>
     <aside class="flex column">
         <div class="timeSection column">
             <h3 class="time">Time</h3>
@@ -27,90 +31,94 @@
             <h2 class="listTitle">List Current To Do</h2>
             <div class="listContainer">
                 <ul>
-                    
+
                 </ul>
             </div>
         </div>
-        
+
         <!-- #16-button-and-inputs-v2 -->
         <div class="flex column input-button-container">
             <div class="todo flex">
-                <input type="text" id="addItem">
-                <button id='confirmAddItem'>TO DO</button>
+                <input class="input flex center" type="text" id="addItem" placeholder="What To do?">
+                <button class="btn flex center" id='confirmAddItem'>TO DO</button>
             </div>
             <div class="todo flex">
-                <input type="text">
-                <button  id='removeItem'>REMOVE</button>
+                <input class="input flex center" type="text" placeholder="Wich to remove?">
+                <button class="btn flex center" id='removeItem'>REMOVE</button>
             </div>
             <div class="todo flex">
-                <input type="text">
-                <button>EDIT</button>
+                <input class="input flex center" type="text" placeholder="Choose To Do">
+                <button class="btn flex center">EDIT</button>
             </div>
         </div>
     </aside>
+    
+        <div class="table-div">
+            <table>
+                <thead>
+                    <th colspan="7" class="thHead"><h2>Month</h2></th>
 
-    <table>
-        <thead>
-            <th>Måndag</th>
-            <th>Tisdag</th>
-            <th>Onsdag</th>
-            <th>Torsdag</th>
-            <th>Fredag</th>
-            <th class="saturday">Lördag</th>
-            <th class="sunday">Söndag</th>
-
-        </thead>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="saturday"></td>
-            <td class="sunday">1</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td class="saturday">7</td>
-            <td class="sunday">8</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td class="saturday">14</td>
-            <td class="sunday">15</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-            <td class="saturday">21</td>
-            <td class="sunday">22</td>
-        </tr>
-        <tr>
-            <td>23</td>
-            <td>24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td class="saturday">28</td>
-            <td class="sunday">29</td>
-        </tr>
-        <tr>
-            <td>30</td>
-        </tr>
-
-    </table>
-
+                </thead>
+                <tr>
+                    <th>Måndag</th>
+                    <th>Tisdag</th>
+                    <th>Onsdag</th>
+                    <th>Torsdag</th>
+                    <th>Fredag</th>
+                    <th class="saturday">Lördag</th>
+                    <th class="sunday">Söndag</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="saturday"></td>
+                    <td class="sunday">1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td class="saturday">7</td>
+                    <td class="sunday">8</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td class="saturday">14</td>
+                    <td class="sunday">15</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td class="saturday">21</td>
+                    <td class="sunday">22</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td class="saturday">28</td>
+                    <td class="sunday">29</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                </tr>
+            </table>
+        </div>
+    
 
 </body>
 

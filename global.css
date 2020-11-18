@@ -4,13 +4,34 @@
 }
 
 html {
+    /* font-family: 'PT Sans', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
     height: 100%;
+    
 }
 
 body {
     height: 100%;
+    background: rgb(200,200,200);
+    background: linear-gradient(0deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%, rgba(0,212,255,1) 100%);
 }
 
+main {
+   
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
 /*  REUSABLE CLASSES  */
 .flex {
     display: flex;
@@ -23,4 +44,9 @@ body {
 .row {
     flex-direction: row;
 
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
 }
