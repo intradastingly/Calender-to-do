@@ -1,29 +1,18 @@
-
-@media (max-width: 70rem) {
-
 aside {
     position: fixed;
     border: 1px solid black;
     width: 15rem;
     height: 100%;
 }
-
-table {
-    display: none;
-}
-
 input {
     height: 3rem;
 }
-
 button {
     width: 100%;
 }
-
 .todo {
     margin: .5rem 0;
 }
-
 /* Time display */
 .timeSection {
     padding: 5rem 0rem 5rem 0rem;
