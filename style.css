@@ -17,11 +17,12 @@ aside {
     border: 1px solid black;
     width: 15rem;
     height: 100%;
+    position: fixed;
 }
 
 table {
     display: none;
-
+}
 input {
     height: 3rem;
 
@@ -63,9 +64,6 @@ button {
     flex-direction: column;
 }
 
-
-
 .row {
     flex-direction: row;
-
 }

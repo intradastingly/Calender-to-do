@@ -5,14 +5,17 @@ table {
     height: 90vh;
     border: 2px solid black;
     padding: 1rem;
+    margin-left: 15rem;
 }
 
-td,
-th {
+td, th {
    text-align: right;
    
 }
 
+body {
+    display: flex;
+}
 .sunday {
     background-color: tomato;
 }
@@ -21,8 +24,49 @@ th {
     background-color: lightblue;
 }
 
+aside {
+    border: 1px solid black;
+    width: 15rem;
+    height: 100%;
+    position: fixed;
+}
 
+input {
+    height: 3rem;
+}
 
+button {
+    width: 100%;
+}
 
+.todo {
+    margin: .5rem 0;
+}
 
+/* Time display */
+.timeSection {
+    padding: 5rem 0rem 5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time {
+    font-size: 2rem;
+}
+.dateMonth {
+    padding-left: 0.5rem;
+}
+.timeMonth {
+    display: flex;
+}
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
 }
