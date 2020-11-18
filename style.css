@@ -1,5 +1,3 @@
-@media (max-width: 70rem) {
-
 * {
     padding: 0;
     margin: 0;
@@ -13,19 +11,21 @@ body {
     height: 100%;
 }
 
+@media (max-width: 70rem) {
+
 aside {
+    position: fixed;
     border: 1px solid black;
     width: 15rem;
     height: 100%;
-    position: fixed;
 }
 
 table {
     display: none;
 }
+
 input {
     height: 3rem;
-
 }
 
 button {
@@ -66,4 +66,5 @@ button {
 
 .row {
     flex-direction: row;
+
 }
