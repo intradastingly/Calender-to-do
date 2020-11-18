@@ -28,8 +28,13 @@ td {
     padding: 0.5rem;
 }
 
+.date:hover {
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+}
+
 th.smaller {
-    background-color: brown;
+    background-color: rgb(255, 147, 147);
    height: 2rem;
    color: white;
 }
