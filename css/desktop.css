@@ -19,13 +19,21 @@ table {
     color:white;
     border-radius: 1rem 1rem 0 0;
     padding: 0.5rem;
+    text-align: left;
 }
-td, th {
+td {
     vertical-align: top;
     text-align: left;
     border: solid 1px white;
     padding: 0.5rem;
 }
+
+th.smaller {
+    background-color: brown;
+   height: 2rem;
+   color: white;
+}
+
 body {
     display: flex;
 }
@@ -33,5 +41,5 @@ body {
     background-color: tomato;
 }
 .saturday {
-    background-color: lightblue;
+    background-color: rgb(255, 210, 193);
 }

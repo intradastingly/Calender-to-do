@@ -1,4 +1,17 @@
 
+/**
+ * 
+remove active list item todo. 
+
+type in wich list item todo to remove. 
+
+remove list item todo.
+
+add list items to empty array. 
+
+
+
+ */
 function eventListenersButtons(){
     const confirm = document.getElementById('confirmAddItem');
     const remove = document.getElementById('removeItem');
