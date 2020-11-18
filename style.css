@@ -8,9 +8,11 @@
 html {
     height: 100%;
 }
+
 body {
     height: 100%;
 }
+
 aside {
     border: 1px solid black;
     width: 15rem;
@@ -19,13 +21,38 @@ aside {
 
 table {
     display: none;
+
+input {
+    height: 3rem;
+
 }
 
+button {
+    width: 100%;
+}
 
+.todo {
+    margin: .5rem 0;
+}
 
+/* Time display */
+.timeSection {
+    padding: 5rem 0rem 5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time {
+    font-size: 2rem;
+}
+.dateMonth {
+    padding-left: 0.5rem;
+}
+.timeMonth {
+    display: flex;
+}
 
-
-
+/* Time display */
 
 /*  REUSABLE CLASSES  */
 .flex {
@@ -35,5 +62,10 @@ table {
 .column {
     flex-direction: column;
 }
+
+
+
+.row {
+    flex-direction: row;
 
 }
