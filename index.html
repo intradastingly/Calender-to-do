@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/media.css">
     <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/date-time.js"></script>
     <script defer src="./scripts/timeWeekdaysDisplay.js"></script>
-    <script defer src="./scripts/eventCallers.js"></script>
     <script defer src="./scripts/toDoListScript.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
@@ -22,9 +22,10 @@
     <h1>Calender</h1>
     <aside class="flex column">
         <div class="timeSection column">
-            <h3 class="time">Time</h3>
-            <div class="timeMonth row">
-                <h3 class="weekday">4 Veckodag </h3>
+            <h3 class="time" id="showTime">Time</h3>
+            <div class="timeMonth center column">
+                <h3 class="weekday" id="showDate">Datum </h3>
+                <h3 class="weekday" id="showDay">4 Veckodag </h3>
             </div>
         </div>
         <!-- #17-Ul-list -->
