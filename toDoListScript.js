@@ -1,5 +1,5 @@
 
-function eventListeners(){
+function eventListenersButtons(){
     const confirm = document.getElementById('confirmAddItem');
     const remove = document.getElementById('removeItem');
     confirm.onclick = takeInput;
