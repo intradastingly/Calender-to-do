@@ -15,11 +15,24 @@ aside {
 }
 
 
+/* Time display */
+.timeSection {
+    padding: 5rem 0rem 5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time {
+    font-size: 2rem;
+}
+.dateMonth {
+    padding-left: 0.5rem;
+}
+.timeMonth {
+    display: flex;
+}
 
-
-
-
-
+/* Time display */
 
 /*  REUSABLE CLASSES  */
 .flex {
@@ -28,4 +41,8 @@ aside {
 
 .column {
     flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
 }
