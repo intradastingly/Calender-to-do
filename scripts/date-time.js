@@ -1,9 +1,5 @@
 
-
-// shows a digital clock, weekday and month
-
-window.addEventListener('load', startClock);
-
+//added onload function to main
 
 /** Function that starts the clock and update it every 1s */
 function startClock() {
@@ -15,21 +11,18 @@ function startClock() {
 /** Updates time and date, and takes in a variable that fetch current date/time */
 function updateClock() {
     let time = new Date();
-
+    
     getTime(time);
     showWeekday(time);
     showCurrentDate(time);
-
-
 }
-
 
 /** Fetch time ands shows current time */
 function getTime(time) {
     let hours = time.getHours();
     let minutes = time.getMinutes();
     let seconds = time.getSeconds();
-
+   
     if (hours < 10) {
         hours = '0' + hours;
     }
@@ -49,7 +42,7 @@ function getTime(time) {
 /** Shows weekday. Switch statement takes weekday index and change it to letters, Måndag, tisdag etc.*/
 function showWeekday(time) {
     let weekday = time.getDay();
-
+    
     const weekDayContainer = document.getElementById('showDay');
     weekDayContainer.innerHTML = weekday;
 
@@ -87,7 +80,7 @@ function showCurrentDate(time) {
     let today = time.getDate();
     let month = time.getMonth();
 
-
+   
     let todaysDate = document.getElementById('showDate');
     todaysDate.innerHTML = today + ' ' + month;
 
