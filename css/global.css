@@ -47,3 +47,9 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+p{
+    position:relative;
+    width: 1rem;
+    white-space: nowrap;
+}
