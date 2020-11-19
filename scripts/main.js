@@ -1,6 +1,8 @@
 window.addEventListener('load',main);
 
 function main() {
-    selectCalendarDate()
+    selectCalendarDate();
     eventListenersButtons();
+    currentDate();
+    startClock();
 }
