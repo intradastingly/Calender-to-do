@@ -47,12 +47,20 @@ function setCurrentDateStyle(today){
     }
 }
 
-function checkToDoList(event) {
-   
+function checkToDoList(li) {
+    console.log(li.innerText);
+    //takes list from to do list.
+    //adds list to selected day as numbers. 
+    //add to do list to localstorage.
+    //display today list on day it was selected on. 
+
+    const dates = document.getElementsByClassName('date');
+    for(const date of dates){
+        
+    }
 }
 
 //show current list items if any(use array)
 //couple to add list functions
 //make it so holidays have red box color with API call
-//Add current date highlight on current day in calendar
 //add li with red days to td append etc...
