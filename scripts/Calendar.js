@@ -1,36 +1,48 @@
+
+/**
+ * takes current date and assigns to variable.
+ */
 function currentDate() {
     let time = new Date();
     let today = time.getDate();
-    selectCalendarDate(today);
     setCurrentDateStyle(today)
 }
 
+/**
+ * loops through all calendar dates and applies on click to individual box which calls two functions
+ */
 function selectCalendarDate(){
-    const date = document.getElementsByClassName('date');
-    for(let i = 0; i < date.length; i++){
-        date[i].addEventListener('click',checkToDoList);
-        date[i].addEventListener('click',boxColorChangeActive);
+    const dates = document.getElementsByClassName('date');
+    for(let i = 0; i < dates.length; i++){
+        dates[i].addEventListener('click',checkToDoList);
+        dates[i].addEventListener('click',boxColorChangeActive);
     }
 }
 
+/**
+ * 
+ * @param {mouse click} event changes color of box based on click.
+ */
 function boxColorChangeActive(event) {
-    const calendarDates = document.getElementsByClassName('date');
-    for(const dates of calendarDates){
-        if(dates.innerText === event.target.innerText){
-            dates.style.backgroundColor = "rgb(255, 255, 255)";
+    const dates = document.getElementsByClassName('date');
+    for(const date of dates){
+        if(date.innerText === event.target.innerText){
+            date.style.backgroundColor = "rgb(255, 255, 255)";
         } else {
-            dates.style.backgroundColor = "";
+            date.style.backgroundColor = "";
         }
     }
 }
 
-//find a way to get current date highlighted 
+/**
+ * 
+ * @param {current date} today applies styling to current date of the month in the calendar.
+ */
 function setCurrentDateStyle(today){
-    console.log(today);
-    const date = document.getElementsByClassName('date');
-    for(let i = 0; i < date.length; i++){
-        if(date[i].innerText === today) {
-            console.log('test')
+    const dates = document.getElementsByClassName('date');
+    for(const date of dates){
+        if(today === parseFloat(date.innerText)) {
+            date.style.border = "2px solid black";
         }
     }
 }

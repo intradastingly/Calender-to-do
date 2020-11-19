@@ -15,6 +15,7 @@ function updateClock() {
     getTime(time);
     showWeekday(time);
     showCurrentDate(time);
+
 }
 
 /** Fetch time ands shows current time */
