@@ -1,4 +1,7 @@
 // Add eventlisteners to Buttons.
+
+listItemArray = [];
+
 function eventListenersButtons(){
     const confirm = document.getElementById('confirmAddItem'); 
     confirm.onclick = takeInput; 
@@ -16,6 +19,10 @@ function eventListenersButtons(){
 
  // adds value to new li as textNode. 
  function addNewItemToList(input){
+
+   listItemArray.push(input)
+   console.log(listItemArray);
+   
     const ul = document.getElementById("ul");
     const li = document.createElement("li");
     li.setAttribute("id", input);
@@ -28,5 +35,10 @@ function eventListenersButtons(){
 function removeItemFromList() {
     const ul = document.getElementById("ul");
     const item = document.getElementById(addItem.value);
+
+    for (let i = 0; i < listItemArray.length ; i++) {
+      console.log(listItemArray[i])
+   }
+
     ul.removeChild(item);
 }
