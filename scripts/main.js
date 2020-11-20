@@ -1,6 +1,9 @@
 window.addEventListener('load',main);
 
 function main() {
-    // selectCalendarDate()
+    remove-todo();
+    selectCalendarDate();
     eventListenersButtons();
+    currentDate();
+    startClock();
 }
