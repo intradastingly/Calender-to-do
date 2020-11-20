@@ -31,22 +31,24 @@ function eventListenersButtons(){
      addNewItemToList(input);
  }
  
+ 
  /**
   * 
-  * @param {user input} input creates the inner list elements to be displayed in the browser 
+  * @param {value} input creates the inner list elements to be displayed in the browser 
   */
  function addNewItemToList(input){
          const ul = document.querySelector('ul');
          const li = document.createElement('li');
+         const clearInput = document.getElementById('addItem');
          li.innerText = input;
          ul.appendChild(li)
+         clearInput.value = '';//added this to clear the input field after text is submitted
              if (input === "") {
                  alert("please add something");  
                  li.parentNode.removeChild(li);
          } 
-         
-         //sends list items to calendar function.
-         checkToDoList(li)   
+        
+         addDateToDoListNumber(li) //sends list items to calendar function.
  }
  
  function removeLastItemFromList(){
