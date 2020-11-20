@@ -26,6 +26,10 @@ function addNewItemToList(input){
    ul.appendChild(li);
 
 
+
+
+   
+
    clearInput.value = '';
 }
 
@@ -39,5 +43,8 @@ function removeItemFromList() {
    const item = document.getElementById(addItem.value);
    ul.removeChild(item, input);
 
+
+
    clearInput.value = '';
 }
+
