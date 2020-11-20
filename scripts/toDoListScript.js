@@ -4,10 +4,18 @@ function eventListenersButtons(){
    confirm.onclick = takeInput; 
 
    const remove = document.getElementById('removeItem'); 
-   remove.onclick = removeItemFromList;
+   remove.onclick = removeButton;
+   //remove.onclick = removeItemFromList;
 
 }
 
+function addListIds(input){
+   const ul = document.querySelectorAll("#ul-items li");
+   for(let i = 0; i < ul.length; i++){
+      ul[i].addEventListener('click', removeButton); 
+      ul[i].id = input;
+   }
+}
 
 // takes input text as value.
 function takeInput(){
@@ -26,25 +34,50 @@ function addNewItemToList(input){
    ul.appendChild(li);
 
 
+   /* listItemArray.push(li);
+   console.log(listItemArray) */
 
 
-   
+
+
+
 
    clearInput.value = '';
+   addListIds(input)
 }
 
-listItemArray = [];
+//let listItemArray = [];
 
 // removes li wich has the input text value.
 function removeItemFromList() {
    let input = document.getElementById('addItem').value;
    const clearInput = document.getElementById('addItem');
-   const ul = document.getElementById("ul-items");
    const item = document.getElementById(addItem.value);
    ul.removeChild(item, input);
 
-
-
    clearInput.value = '';
+   
+   const ul = document.getElementById("ul-items");
+   
+   for(const list of ul){
+      console.log(list);
+   }
+   
+   
+  /*  for (let i = 0; i < listItemArray.length; i++) {
+      let liIndex = listItemArray[i];
+      console.log("loop works")
+      liIndex.addEventListener('click', removeLiItemOnclick);
+      break;
+   } */
+}
+
+function removeButton(event, input){
+   const ul = document.querySelectorAll("li");
+    if (event.target.id === input){
+      ul.style.color = "red";
+   } else {
+      ul.style.color = "";
+   }  
 }
 
