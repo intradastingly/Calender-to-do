@@ -44,3 +44,5 @@ function removeItemFromList() {
    clearInput.value = '';
 }
 
+// hej
+// hdj
