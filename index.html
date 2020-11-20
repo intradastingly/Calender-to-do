@@ -13,6 +13,8 @@
     <script defer src="./scripts/date-time.js"></script>
     <script defer src="./scripts/timeWeekdaysDisplay.js"></script>
     <script defer src="./scripts/toDoListScript.js"></script>
+    <script defer src="./scripts/displayCalendarMonth.js"></script>
+    <script defer src="./scripts/Calendar.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
@@ -32,7 +34,7 @@
         <div class="flex column">
             <h2 class="listTitle">List Current To Do</h2>
             <div class="listContainer">
-                <ul id="ul">
+                <ul id="ul ul-items">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -45,7 +47,7 @@
         <!-- #16-button-and-inputs-v2 -->
         <div class="flex column input-button-container">
             <div class="todo flex">
-                <input class="input flex center" type="text" id="addItem" placeholder="To Do">
+                <input class="input flex center" type="text" id="addItem" placeholder="">
             </div>
             <div class="todo flex">
                 <button class="btn flex center" id='confirmAddItem'>LÄGG TILL</button>
@@ -57,7 +59,7 @@
         <div class="table-div">
             <table>
                 <thead>
-                    <th colspan="7" class="thHead"><h2>Month</h2></th>
+                    <th colspan="7" class="thHead"><h2 id="currentMonth">Month</h2></th>
                 </thead>           
                 <tr>
                     <th class="smaller">Måndag</th>
@@ -65,8 +67,8 @@
                     <th class="smaller">Onsdag</th>
                     <th class="smaller">Torsdag</th>
                     <th class="smaller">Fredag</th>
-                    <th class="saturday smaller date">Lördag</th>
-                    <th class="sunday smaller date">Söndag</th>
+                    <th class="saturday smaller">Lördag</th>
+                    <th class="sunday smaller">Söndag</th>
                 </tr>
                 <tr>
                     <td></td>
@@ -80,7 +82,10 @@
                 <tr>
                     <td class="date">2</td>
                     <td class="date">3</td>
-                    <td class="date">4</td>
+                    <td class="date">4
+                        <p>christmas</p>
+                        <p>new year</p>
+                    </td>
                     <td class="date">5</td>
                     <td class="date">6</td>
                     <td class="saturday date">7</td>

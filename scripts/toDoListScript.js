@@ -10,8 +10,6 @@ function eventListenersButtons(){
     remove.onclick = removeItemFromList;
  }
 
-
- // takes input text as value.
  function takeInput(){
     let input = document.getElementById('addItem').value;
     addNewItemToList(input);
@@ -28,7 +26,6 @@ function eventListenersButtons(){
     li.setAttribute("id", input);
     li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
     ul.appendChild(li);
-
  }
 
  // removes li wich has the input text value.
