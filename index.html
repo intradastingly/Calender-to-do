@@ -15,7 +15,6 @@
     <script defer src="./scripts/toDoListScript.js"></script>
     <script defer src="./scripts/displayCalendarMonth.js"></script>
     <script defer src="./scripts/Calendar.js"></script>
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
@@ -35,12 +34,12 @@
         <div class="flex column">
             <h2 class="listTitle">List Current To Do</h2>
             <div class="listContainer">
-                <ul>
-                    <li>fish</li>
-                    <li>dog</li>
-                    <li>Dog human hybrid</li>
-                    <li>Human female</li>
-                    <li>Human Infant</li>
+                <ul id="ul-items">
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <!--Code Injected with Javascript-->
                 </ul>
             </div>
         </div>
@@ -48,7 +47,7 @@
         <!-- #16-button-and-inputs-v2 -->
         <div class="flex column input-button-container">
             <div class="todo flex">
-                <input class="input flex center" type="text" id="addItem" placeholder="To Do">
+                <input class="input flex center" type="text" id="addItem" placeholder="">
             </div>
             <div class="todo flex">
                 <button class="btn flex center" id='confirmAddItem'>LÄGG TILL</button>
