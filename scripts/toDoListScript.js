@@ -33,6 +33,7 @@ function addNewItemToList(input){
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
 
+   li.onclick = removeListItem;
 
    /* listItemArray.push(li);
    console.log(listItemArray) */
@@ -46,6 +47,10 @@ function addNewItemToList(input){
    addListIds(input)
 }
 
+function removeListItem(){
+   console.log("hej");
+   this.parentNode.removeChild(this);
+}
 //let listItemArray = [];
 
 // removes li wich has the input text value.
