@@ -85,3 +85,7 @@ li {
 .timeMonth {
     display: flex;
 }
+
+.red {
+    color: red;
+}

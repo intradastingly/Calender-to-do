@@ -75,9 +75,9 @@ function removeItemFromList() {
 function removeButton(event, input){
    const ul = document.querySelectorAll("li");
     if (event.target.id === input){
-      ul.style.color = "red";
+      ul.classList.add("red");
    } else {
-      ul.style.color = "";
+      
    }  
 }
 
