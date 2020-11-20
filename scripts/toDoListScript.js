@@ -1,5 +1,3 @@
-
-
 // Add eventlisteners to Buttons.
 function eventListenersButtons(){
    const confirm = document.getElementById('confirmAddItem'); 
@@ -23,7 +21,7 @@ function addListIds(input){
 function takeInput(){
    let input = document.getElementById('addItem').value;
    addNewItemToList(input);
-   
+
 }
 
 // adds value to new li as textNode. 
@@ -35,8 +33,14 @@ function addNewItemToList(input){
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
 
+
    /* listItemArray.push(li);
    console.log(listItemArray) */
+
+
+
+
+
 
    clearInput.value = '';
    addListIds(input)
@@ -50,6 +54,7 @@ function removeItemFromList() {
    const clearInput = document.getElementById('addItem');
    const item = document.getElementById(addItem.value);
    ul.removeChild(item, input);
+
    clearInput.value = '';
    
    const ul = document.getElementById("ul-items");
