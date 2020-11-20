@@ -8,20 +8,31 @@ function currentDate() {
     setCurrentDateStyle(today)
 }
 
+function sendCalendarTabs() { 
+    const dates = document.getElementsByClassName('date');
+    for(const date of dates){
+        return date;
+    }
+    //send variables down in one functioN as params??????
+}
+
+function tabs() {
+
+}
 /**
  * loops through all calendar dates and applies on click to individual box which calls two functions
  */
 function selectCalendarDate(){
     const dates = document.getElementsByClassName('date');
     for(let i = 0; i < dates.length; i++){
-        dates[i].addEventListener('click',checkToDoList);
+        dates[i].addEventListener('click',addDateToDoListNumber);
         dates[i].addEventListener('click',boxColorChangeActive);
     }
 }
 
 /**
  * 
- * @param {mouse click} event changes color of box based on click.
+ * @param {click} event changes color of box based on click.
  */
 function boxColorChangeActive(event) {
     const dates = document.getElementsByClassName('date');
@@ -36,7 +47,7 @@ function boxColorChangeActive(event) {
 
 /**
  * 
- * @param {current date} today applies styling to current date of the month in the calendar.
+ * @param {number} today applies styling to current date of the month in the calendar.
  */
 function setCurrentDateStyle(today){
     const dates = document.getElementsByClassName('date');
@@ -47,18 +58,30 @@ function setCurrentDateStyle(today){
     }
 }
 
-function checkToDoList(li) {
-    console.log(li.innerText);
+/**
+ * 
+ * @param {string} li applies styling to current date of the month in the calendar.
+ */
+function addDateToDoListNumber(li) {
     //takes list from to do list.
-    //adds list to selected day as numbers. 
+    const list = document.getElementById('ul-items').children.length;
+    const dates = document.getElementsByClassName('date');
+    const numberOfToDo = document.createElement('p');
+
+    numberOfToDo.className = "toDoCircle";
+    numberOfToDo.innerText = list;
+
+    for(const date of dates){
+        if(date.innerText === event.target.innerText){
+            date.appendChild(numberOfToDo);
+            //adds list to selected day as numbers. 
+        }
+    }
+}
+    
     //add to do list to localstorage.
     //display today list on day it was selected on. 
 
-    const dates = document.getElementsByClassName('date');
-    for(const date of dates){
-        
-    }
-}
 
 //show current list items if any(use array)
 //couple to add list functions

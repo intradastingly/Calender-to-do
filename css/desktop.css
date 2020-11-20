@@ -48,3 +48,11 @@ body {
 .saturday {
     background-color: rgb(255, 210, 193);
 }
+
+.toDoCircle {
+    margin: 0.3rem 0.5rem 0.5rem 0.2rem;
+    border-radius: 50%;
+    background-color: red;
+    text-align: center;
+    color: white;
+}
