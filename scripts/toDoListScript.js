@@ -7,6 +7,7 @@ function eventListenersButtons(){
 
    const remove = document.getElementById('removeItem'); 
    remove.onclick = removeItemFromList;
+
 }
 
 
@@ -21,16 +22,19 @@ function takeInput(){
 function addNewItemToList(input){
    const ul = document.getElementById("ul-items");
    const li = document.createElement("li");
+   const clearInput = document.getElementById('addItem');
    li.setAttribute("id", input);
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
-
+   clearInput.value = '';
 }
+
+listItemArray = [];
 
 // removes li wich has the input text value.
 function removeItemFromList(input) {
-    const ul = document.getElementById("ul-items");
-    const item = document.getElementById(addItem.value);
-    ul.removeChild(item);
+   const ul = document.getElementById("ul-items");
+   const item = document.getElementById(addItem.value);
+   ul.removeChild(item);
 }
 

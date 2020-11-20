@@ -19,13 +19,14 @@ function sendCalendarTabs() {
 function tabs() {
 
 }
+
 /**
  * loops through all calendar dates and applies on click to individual box which calls two functions
  */
 function selectCalendarDate(){
     const dates = document.getElementsByClassName('date');
     for(let i = 0; i < dates.length; i++){
-        dates[i].addEventListener('click',addDateToDoListNumber);
+        
         dates[i].addEventListener('click',boxColorChangeActive);
     }
 }
