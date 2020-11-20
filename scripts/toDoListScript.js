@@ -1,44 +1,32 @@
-
-/**
- * 
-remove active list item todo. 
-
-type in wich list item todo to remove. 
-
-remove list item todo.
-
-add list items to empty array. 
-
-
-
- */
+// Add eventlisteners to Buttons.
 function eventListenersButtons(){
-    const confirm = document.getElementById('confirmAddItem');
-    const remove = document.getElementById('removeItem');
-    confirm.onclick = takeInput;
-    remove.onclick = removeLastItemFromList;
+    const confirm = document.getElementById('confirmAddItem'); 
+    confirm.onclick = takeInput; 
+
+    const remove = document.getElementById('removeItem'); 
+    remove.onclick = removeItemFromList;
  }
- 
+
+
+ // takes input text as value.
  function takeInput(){
-     const input = document.getElementById('addItem').value;
-     addNewItemToList(input);
+    let input = document.getElementById('addItem').value;
+    addNewItemToList(input);
  }
- 
+
+ // adds value to new li as textNode. 
  function addNewItemToList(input){
-         const ul = document.querySelector('ul');
-         const li = document.createElement('li');
-         li.innerText = input;
-         ul.appendChild(li)
-             if (input === "") {
-                 alert("please add something");  
-                 li.parentNode.removeChild(li);
-         }    
+    const ul = document.getElementById("ul");
+    const li = document.createElement("li");
+    li.setAttribute("id", input);
+    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
+    ul.appendChild(li);
+
  }
- 
- function removeLastItemFromList(){
-     const ul = document.querySelector('ul');
-     for(let i = 0; i < ul.length; i++){
-         console.log(ul[i]);
-     }
- }
- 
+
+ // removes li wich has the input text value.
+function removeItemFromList() {
+    const ul = document.getElementById("ul");
+    const item = document.getElementById(addItem.value);
+    ul.removeChild(item);
+}
