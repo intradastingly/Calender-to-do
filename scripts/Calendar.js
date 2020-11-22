@@ -75,7 +75,7 @@ function addDateToDoListNumber(event) {
     numberOfToDo.className = "toDoCircle";
     numberOfToDo.innerText = list;
     for(const date of dates){
-        if(date.id === date.id){
+        if(date.id.length > 3){
             date.appendChild(numberOfToDo);
         } 
     }

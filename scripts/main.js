@@ -1,9 +1,6 @@
 window.addEventListener('load',main);
 
-const toDosState = [{
-    title: 'get',
-    date: 12
-}]
+
 
 const toDosStateAlternative = {
    '2020-11-01': ['get', '']
