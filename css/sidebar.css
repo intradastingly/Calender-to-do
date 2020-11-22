@@ -21,7 +21,7 @@ aside {
 .input:hover {
     box-shadow: 0px 0px 10px 0px rgba(101,133,251,1);
 }
-.btn {
+.btn, .btn-add, .btn-clear {
     all: unset;
     width: 100%;
     border-radius: 2rem;
@@ -32,12 +32,16 @@ aside {
     text-decoration: solid ;
     color: white;
 }
-.btn:hover {
+.btn:hover, .btn-add:hover, .btn-clear:hover {
     background-color:hsla(0, 76%, 33%, 0.637);
     cursor: pointer;
 }
 
-.btn:active {
+.btn-add, .btn-clear {
+    margin: 0.3rem;
+}
+
+.btn:active, .btn-add:active, .btn-clear:active {
     background-color:#ffffff;
     color: black;
 }

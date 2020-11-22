@@ -16,6 +16,6 @@ function main() {
     eventListenersButtons();
     currentDate();
     startClock();
-    addListIds()
-    addListToCalendarDate()
+    addListIds();
+    addListToCalendarDate();
 }

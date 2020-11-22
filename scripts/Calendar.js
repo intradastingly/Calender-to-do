@@ -48,7 +48,8 @@ function setCurrentDateStyle(today){
 }
 
 function addListToCalendarDate(){
-    const add = document.getElementById('Add');
+    const add = document.getElementById('add');
+    add.onclick = addArrayToSelectedDate;
     add.onclick = addDateToDoListNumber;
 }
 
@@ -74,5 +75,4 @@ function addDateToDoListNumber(li) {
 //show current list items if any(use array)
 //add list items to an array and display array into list.
 
-
-//const dates = function 
+//to change dates use ${} to change date of API url that updates calendar.

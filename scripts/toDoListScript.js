@@ -7,6 +7,9 @@ function eventListenersButtons(){
 
    const remove = document.getElementById('removeItem'); 
    remove.onclick = removeButton;
+
+   const clear = document.getElementById('clear');
+   clear.onclick = clearToDoList;
 }
 
 /**
@@ -27,19 +30,9 @@ function addNewItemToList(input){
    li.setAttribute("id", input);
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
+   li.className = "listItem";
    clearInput.value = '';
-  
-   /* listItemArray.push(li);
-   console.log(listItemArray)
-
-   
-   let listItemArray = [];
-   for (let i = 0; i < listItemArray.length; i++) {
-      let liIndex = listItemArray[i];
-      console.log("loop works")
-      liIndex.addEventListener('click', removeLiItemOnclick);
-      break;
-   }  */
+   addListItemsToArray(li)
    addListIds(input)
 }
 
@@ -51,10 +44,9 @@ function addListIds(input){
    const ul = document.querySelectorAll("#ul-items li");
    for(let i = 0; i < ul.length; i++){
       ul[i].addEventListener('click', selectFromList); 
-      ul[i].id += 1;
+      ul[i].id = i + 1;
    }
 }
-
 
 /**loops trough all list items and checks wich list item is clicked
  * @param {click} event  and turns it orange and adds a class
@@ -65,7 +57,7 @@ function selectFromList(event){
       if (event.target.id === list.id){
          list.style.color = "white";
          list.className = "active";
-      } else if (event.target.id != list.id){ 
+      } else { 
          list.style.color = "black";
          list.className = " ";
       }
@@ -80,3 +72,10 @@ function removeButton(){
    while (remove.length > 0) remove[0].remove();
 }
 
+/**
+ * clears to do list
+ */
+function clearToDoList(){
+   const listItem = document.getElementsByClassName('listItem');
+   while (listItem.length > 0) listItem[0].remove();
+}
