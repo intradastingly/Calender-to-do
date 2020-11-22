@@ -18,4 +18,5 @@ function main() {
     startClock();
     addListIds();
     addListToCalendarDate();
+    setCalenderDatesIds();
 }
