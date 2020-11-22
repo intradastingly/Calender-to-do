@@ -1,4 +1,3 @@
-
 /**
  * takes current date and assigns to variable.
  */
@@ -9,7 +8,7 @@ function currentDate() {
 }
 
 /**
- * loops through all calendar dates and applies on click to individual box which calls two functions
+ * loops through all calendar dates and applies on click active.
  */
 function selectCalendarDate(){
     const dates = document.getElementsByClassName('date');
@@ -63,8 +62,6 @@ function addDateToDoListNumber(li) {
     const numberOfToDo = document.createElement('p');
     numberOfToDo.className = "toDoCircle";
     numberOfToDo.innerText = list;
-    //show current list items if any(use array)
-    //add list items to an array and say array in list.
     for(const date of dates){
         if(date.id === 'active'){
             date.appendChild(numberOfToDo);
@@ -72,7 +69,10 @@ function addDateToDoListNumber(li) {
     }
 }  
     
-    //add to do list to localstorage.
-    //display today list on day it was selected on. 
+//add to do list to localstorage.
+//display today list on day it was selected on. 
+//show current list items if any(use array)
+//add list items to an array and display array into list.
 
 
+//const dates = function 

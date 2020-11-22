@@ -15,7 +15,6 @@ function eventListenersButtons(){
 function takeInput(){
    let input = document.getElementById('addItem').value;
    addNewItemToList(input);
-
 }
 
 /**
@@ -64,17 +63,18 @@ function selectFromList(event){
    const ul = document.querySelectorAll("li");
    for (let list of ul) {
       if (event.target.id === list.id){
-         list.style.color = "orange";
+         list.style.color = "white";
          list.className = "active";
-      } else if (event.target.id != list.id){ // makes the non selected list item back to black.
+      } else if (event.target.id != list.id){ 
          list.style.color = "black";
          list.className = " ";
       }
    } 
 } 
 
-// removes the list item with the class name active on it. 
-
+/**
+ * removes the list item with the class name active on it.  
+ */
 function removeButton(){
    const remove = document.getElementsByClassName('active');
    while (remove.length > 0) remove[0].remove();
