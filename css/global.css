@@ -29,6 +29,7 @@ header {
     display: flex;
     justify-content: center;
 }
+
 /*  REUSABLE CLASSES  */
 .flex {
     display: flex;
@@ -52,4 +53,12 @@ p{
     position:relative;
     width: 1rem;
     white-space: nowrap;
+}
+
+.red {
+    color: red;
+}
+
+.center {
+    justify-content: center;
 }
