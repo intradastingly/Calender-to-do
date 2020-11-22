@@ -78,5 +78,4 @@ function removeButton(){
 function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
-   removeNumberListFromDate()
 }
