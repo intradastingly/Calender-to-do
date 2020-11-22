@@ -44,7 +44,7 @@ function addListIds(input){
    const ul = document.querySelectorAll("#ul-items li");
    for(let i = 0; i < ul.length; i++){
       ul[i].addEventListener('click', selectFromList); 
-      ul[i].id = i + 1;
+      ul[i].id += i;
    }
 }
 
@@ -73,7 +73,7 @@ function removeButton(){
 }
 
 /**
- * clears to do list
+ * clears entire to do list
  */
 function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
