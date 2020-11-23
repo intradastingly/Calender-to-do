@@ -55,20 +55,23 @@ function setCurrentDateStyle(today){
 }
 
 /**
- * 
- * @param {string} li adds list as number to currently selected date.
+ * Updates circle number based on number of items in the list. 
+ * @param {string} li adds list as number to currently selected date.  
  */
 function addDateToDoListNumber(li) {
     const list = document.getElementById('ul-items').children.length;
     const dates = document.getElementsByClassName('date');
     const numberOfToDo = document.createElement('p');
-    //use innerHTML value of 'p'
     numberOfToDo.className = "toDoCircle";
-    numberOfToDo.innerText = list;
+    numberOfToDo.innerHTML = list;
     for(const date of dates){
         if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
-        } 
+            console.log(numberOfToDo);
+            if(date.children.length > 1){
+                date.childNodes[1].remove();
+            }
+        }
     }// get it so number value is changed based on the amount of items in the list. no need for button
 }
 

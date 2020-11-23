@@ -34,10 +34,9 @@ function saveToLocalStorage(){
 //figure out why button ID is going into date.
 //add splice array of selected indexof???
 //create DOM alert if input field is empty.
-//add to do list to localstorage.
+
 //display today list on day it was selected on. 
-//show current list items if any(use array)
-//add list items to an array and display array into list.
+//show current list items if any(use array in local storage with dates)
 //to change dates use ${} to change date of API url that updates calendar.
 //populate calendar tr innerHTML with getdate() instead of text. 
-//Remove old to do list from date. 
+//Remove old to do list from date with rensa button. 
