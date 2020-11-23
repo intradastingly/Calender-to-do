@@ -1,8 +1,10 @@
 let listItemArray = [];
 
 function addListItemsToArray(li){
+   listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
    listItemArray.push(li);
    addArrayToSelectedDate(listItemArray)
+   addToLocalStorage(listItemArray);
 }
 
 function addArrayToSelectedDate(listItemArray){
