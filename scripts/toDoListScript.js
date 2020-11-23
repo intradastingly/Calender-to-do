@@ -10,6 +10,9 @@ function eventListenersButtons(){
 
    const clear = document.getElementById('clear');
    clear.onclick = clearToDoList;
+
+   const save = document.getElementById('save');
+   clear.onclick = saveToLocalStorage;
 }
 
 /**
@@ -27,14 +30,40 @@ function addNewItemToList(input){
    const ul = document.getElementById("ul-items");
    const li = document.createElement("li");
    const clearInput = document.getElementById('addItem');
-   li.setAttribute("id", input);
+
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
    li.className = "listItem";
-   addListItemsToArray(input)
+
+   addItemsToArray(input)
    clearInput.value = '';
+   addListItemsToArray(li)
    addListIds(input)
+
+      
+   if (input === "") {
+      li.parentNode.removeChild(li);
+   }
+   
+   clearInput.value = '';
+
+   addListItemsToArray(li)
+   addListIds();
+   addDateToDoListNumber(li)
+    //pleaseAddInput(li, ul, input);
+
 }
+
+/* function pleaseAddInput(li, ul, input){
+   if(input.length === 0){
+      const textWarning = document.createElement("p");
+      textWarning.innerHTML = "Please add an Item";
+      textWarning.className = "warning";
+      ul.appendChild(textWarning);
+   } else if () {
+
+   }
+} */
 
 /** 
 * ads different ids to each list item
@@ -44,7 +73,7 @@ function addListIds(input){
    const ul = document.querySelectorAll("#ul-items li");
    for(let i = 0; i < ul.length; i++){
       ul[i].addEventListener('click', selectFromList); 
-      ul[i].id += i;
+      ul[i].id = i + 'l';
    }
 }
 
@@ -56,19 +85,19 @@ function selectFromList(event){
    for (let list of ul) {
       if (event.target.id === list.id){
          list.style.color = "white";
-         list.className = "active";
+         list.className = "focus";
       } else { 
          list.style.color = "black";
          list.className = " ";
       }
-   } 
+   } //add splice array of seleted indexof???
 } 
 
 /**
  * removes the list item with the class name active on it.  
  */
 function removeButton(){
-   const remove = document.getElementsByClassName('active');
+   const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
 }
 
@@ -78,4 +107,6 @@ function removeButton(){
 function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
+   currentToDoList = [];
 }
+
