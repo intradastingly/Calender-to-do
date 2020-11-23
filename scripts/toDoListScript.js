@@ -77,8 +77,10 @@ function selectFromList(event){
  * @param {*} event 
  */
 function showListItemX(list) {
+   
    let paragraph = document.createElement("p");
    list.appendChild(paragraph);
+   paragraph.className = "focus";
    paragraph.innerText = "X";
    paragraph.style.fontSize = ".8rem"
    paragraph.style.width = "1rem";
@@ -87,11 +89,9 @@ function showListItemX(list) {
    paragraph.style.marginTop = "-1.2rem"
    paragraph.style.marginLeft = "-3rem"
    paragraph.style.borderRadius = "1rem"
-   console.log(paragraph)
-   //calls function that removes X and List
+
    paragraph.onclick = removeListContent; //removeListItemWithX(paragraph, list);
 }
-
 
 
 /**
@@ -117,7 +117,7 @@ function clearItem(){
 
 
 // remove "ta bort" button - DONE -
-// style ".focus" 
+// style ".focus" - DONE -
 // make only one ".focus" adds not multiple each click
 // remove ".focus" when u choose another list
 // setTimeOut on how long ".focus" will show
