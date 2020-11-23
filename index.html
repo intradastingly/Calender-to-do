@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="./css/desktop.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/media.css">
-    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/localStorage.js"></script>
     <script defer src="./scripts/date-time.js"></script>
     <script defer src="./scripts/timeWeekdaysDisplay.js"></script>
     <script defer src="./scripts/toDoListScript.js"></script>
     <script defer src="./scripts/displayCalendarMonth.js"></script>
     <script defer src="./scripts/Calendar.js"></script>
     <script defer src="./scripts/holidays.js"></script>
+    <script defer src="./scripts/main.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
@@ -32,12 +33,12 @@
             </div>
         </div>
         <!-- #17-Ul-list -->
-        <div class="flex column">
-            <h2 class="listTitle">List Current To Do</h2>
+        <div class="flex center column">
+            <h2 class="listTitle"> To Do</h2>
             <div class="listContainer">
-                <ul id="ul-items">
-                  
-                </ul>
+                <ol id="ul-items">
+                    
+                </ol>
             </div>
         </div>
 
@@ -50,7 +51,8 @@
                 <button class="btn flex center" id='confirmAddItem'>LÄGG TILL</button>
                 <button class="btn flex center" id='removeItem'>TA BORT</button>
             </div>
-            <button class="btn flex center" id='Add'>ADDERA</button>
+            <button class="btn-clear flex center" id='save'>SPARA</button>
+            <button class="btn-clear flex center" id='clear'>RENSA</button>
         </div>
     </aside>
     
@@ -81,8 +83,6 @@
                     <td class="date">2</td>
                     <td class="date">3</td>
                     <td class="date">4
-                        <p>christmas</p>
-                        <p>new year</p>
                     </td>
                     <td class="date">5</td>
                     <td class="date">6</td>

@@ -1,4 +1,3 @@
-
 /**
  * takes current date and assigns to variable.
  */
@@ -8,8 +7,14 @@ function currentDate() {
     setCurrentDateStyle(today)
 }
 
+function setCalenderDatesIds(){
+    const dates = document.getElementsByClassName('date');
+    for(let i = 0; i < dates.length; i++){
+        dates[i].id =  i + 1;
+    }
+}
 /**
- * loops through all calendar dates and applies on click to individual box which calls two functions
+ * loops through all calendar dates and applies on click active.
  */
 function selectCalendarDate(){
     const dates = document.getElementsByClassName('date');
@@ -19,18 +24,19 @@ function selectCalendarDate(){
 }
 
 /**
- * 
+ * If statements remove last 7 of the string, removing active status when other element is clicked. 
  * @param {click} event changes color of box based on click and adds active ID.
  */
 function boxColorChangeActive(event) {
     const dates = document.getElementsByClassName('date');
     for(const date of dates){
-        if(date.innerText === event.target.innerText){
+        if(date.id === event.target.id){
             date.style.backgroundColor = "rgb(255, 255, 255)";
-            date.id = "active";
+            date.classList.add("active");
+            clearToDoList()
         } else {
-            date.style.backgroundColor = "";
-            date.id = "";
+            date.classList.remove('active');
+            date.style.backgroundColor = ""; 
         }
     }
 }
@@ -48,10 +54,6 @@ function setCurrentDateStyle(today){
     }
 }
 
-function addListToCalendarDate(){
-    const add = document.getElementById('Add');
-    add.onclick = addDateToDoListNumber;
-}
 
 /**
  * 
@@ -63,16 +65,14 @@ function addDateToDoListNumber(li) {
     const numberOfToDo = document.createElement('p');
     numberOfToDo.className = "toDoCircle";
     numberOfToDo.innerText = list;
-    //show current list items if any(use array)
-    //add list items to an array and say array in list.
     for(const date of dates){
-        if(date.id === 'active'){
+        if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
         } 
-    }
-}  
-    
-    //add to do list to localstorage.
-    //display today list on day it was selected on. 
+    }// get it so number value is changed based on the amount of items in the list. no need for button
+}
 
+//current list value
+//if more values added + value to list. 
+  
 
