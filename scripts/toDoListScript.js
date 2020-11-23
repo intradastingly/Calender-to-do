@@ -68,7 +68,7 @@ function selectFromList(event){
          list.style.color = "black";
          list.className = " ";
          
-         // removeParagraphStyles(list);
+         removeParagraphStyles("x");
       }
    } 
 } 
@@ -82,6 +82,7 @@ function showListItemX(list) {
    
    let paragraph = document.createElement("p");
    paragraph.className = "x";
+   paragraph.id = "x"
    paragraph.innerText = "X";
    list.appendChild(paragraph);
    
@@ -91,11 +92,17 @@ function showListItemX(list) {
 
 
 // should remove css style
-function removeParagraphStyles(list) {
-   
+function removeParagraphStyles() {
+   let element = document.getElementById("x");
+   console.log(element);
+
+
+   setTimeout (function(){
+      element.style.display = "none";
+   }, 3000)
    
       
-   
+   // GET THIS TO WORK PROPERLY THEN IM DONE
 
 
 }
