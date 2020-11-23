@@ -97,3 +97,29 @@ li {
 .red {
     color: red;
 }
+
+.x {
+    font-size: .8rem;
+    color: white;
+    width: 1rem;
+    height: 1rem;
+    background-color: red;
+    margin-top: -1.2rem;
+    margin-left: -3rem;
+    border-radius: 1rem;
+}
+
+.unsetX {
+    color: green;
+}
+
+.btn-add:hover {
+    font-size: .8rem;
+    color: white;
+    width: 1rem;
+    height: 1rem;
+    background-color: red;
+    margin-top: -1.2rem;
+    margin-left: -3rem;
+    border-radius: 1rem;
+}
