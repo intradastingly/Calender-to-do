@@ -13,6 +13,7 @@ function setCalenderDatesIds(){
         dates[i].id =  i + 1;
     }
 }
+
 /**
  * loops through all calendar dates and applies on click active.
  */
@@ -62,8 +63,10 @@ function addDateToDoListNumber(li) {
     const list = document.getElementById('ul-items').children.length;
     const dates = document.getElementsByClassName('date');
     const numberOfToDo = document.createElement('p');
+    
     numberOfToDo.className = "toDoCircle";
     numberOfToDo.innerHTML = list;
+
     for(const date of dates){
         if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
@@ -72,10 +75,8 @@ function addDateToDoListNumber(li) {
                 date.childNodes[1].remove();
             }
         }
-    }// get it so number value is changed based on the amount of items in the list. no need for button
+    }
 }
 
-//current list value
-//if more values added + value to list. 
-  
+
 

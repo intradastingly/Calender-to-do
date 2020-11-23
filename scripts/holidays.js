@@ -24,12 +24,12 @@ async function fetchAllDays() {
 function getHolidays (data) {
     const holidays = [];
 
-    for (day in data.dagar) {
+    for (const day of data.dagar) {
         if (day.helgdag) {
             holidays.push(day);
             
         }
-        /*console.log(holidays);*/
+        console.log(holidays);
         
     }
 
