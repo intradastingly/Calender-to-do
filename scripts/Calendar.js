@@ -54,7 +54,6 @@ function setCurrentDateStyle(today){
     }
 }
 
-
 /**
  * 
  * @param {string} li adds list as number to currently selected date.
@@ -63,6 +62,7 @@ function addDateToDoListNumber(li) {
     const list = document.getElementById('ul-items').children.length;
     const dates = document.getElementsByClassName('date');
     const numberOfToDo = document.createElement('p');
+    //use innerHTML value of 'p'
     numberOfToDo.className = "toDoCircle";
     numberOfToDo.innerText = list;
     for(const date of dates){

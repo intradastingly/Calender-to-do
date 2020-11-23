@@ -1,30 +1,27 @@
 
-let currentToDoList = [];
-
 function addListToCalendarDate(){
    const add = document.getElementById('save');
    //add.onclick = addArrayToSelectedDate;
-   add.addEventListener('click', saveToLocalStorage);
+   add.addEventListener('click', addItemsToArray);
 }
 
 let listItemArray = [];
 
 function addItemsToArray(li){
    listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
-   listItemArray.push(li);
    addToLocalStorage(listItemArray);
-}
-
-function addListItemsToArray(li){
    const dates = document.getElementsByClassName('date');
    for(let date of dates){
       if(date.classList.contains('active')){
          date = date.id;
-         currentToDoList.push({"title":li.innerText, "date": date});
+         listItemArray.push({"title":li.innerText, "date": date});
       } //when input value undefiend is implemented problem will be sovled when adding empty string. 
-   }// make it so that number count goes up as you add items to list. remove addera button
-   
-   console.log(currentToDoList); 
+   }// items being added when date clicked.
+   addToLocalStorage(listItemArray)
+}
+
+function addToLocalStorage(listItemArray) {
+   localStorage.setItem('todos', JSON.stringify(listItemArray));
 }
 
 function saveToLocalStorage(){
