@@ -91,7 +91,7 @@ function showListItemX(list) {
 }
 
 
-// should remove css style
+// should remove css style when pressing second list item
 function removeParagraphStyles() {
    let element = document.getElementById("x");
    console.log(element);
