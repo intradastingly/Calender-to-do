@@ -1,4 +1,8 @@
 let listItemArray = [];
+const toDosState = [{
+    title: 'get',
+    date: 12
+}]
 
 function addListItemsToArray(li){
    listItemArray.push(li);
