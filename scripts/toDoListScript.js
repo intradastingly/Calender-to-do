@@ -27,13 +27,21 @@ function addNewItemToList(input){
    const ul = document.getElementById("ul-items");
    const li = document.createElement("li");
    const clearInput = document.getElementById('addItem');
+
    li.setAttribute("id", input);
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
    li.className = "listItem";
    clearInput.value = '';
+
    addListItemsToArray(li)
    addListIds(input)
+
+   if (input === "") {
+      // remove no.1 
+      li.parentNode.removeChild(li);
+      
+   }
 }
 
 /** 
@@ -79,3 +87,17 @@ function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
 }
+
+
+
+// select item on list
+// add X under as paragraph. 
+// paragraph child to li item. 
+// paragraph onclick remove paragraph
+// paragraph onlick remove paragraph
+// remove ta bort button
+
+
+
+
+// create DOM alert if input field is empty.
