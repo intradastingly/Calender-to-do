@@ -5,9 +5,6 @@ function eventListenersButtons(){
    const confirm = document.getElementById('confirmAddItem'); 
    confirm.onclick = takeInput; 
 
-   const remove = document.getElementById('removeItem'); 
-   remove.onclick = removeButton;
-
    const clear = document.getElementById('clear');
    clear.onclick = clearToDoList;
 }
@@ -54,19 +51,17 @@ function addListIds(input){
    }
 }
 
+
+
 /**loops trough all list items and checks wich list item is clicked
- * @param {click} event  and turns it orange and adds a class
+ * @param {click} event  and turns it white and adds a class
  */
 function selectFromList(event){
    const ul = document.querySelectorAll("li");
-   console.log(event)
-   event.preventDefault()
    for (let list of ul) {
       if (event.target.id === list.id){
          list.style.color = "white";
-         list.className = "active";
-         
-         //call function that shows X
+         list.className = "focus";
          list.onclick = showListItemX(list); 
         
       } else { 
@@ -75,39 +70,35 @@ function selectFromList(event){
       }
    } 
 } 
+
+/**
+ * shows X when pressed specifik list
+ * @param {*} list 
+ * @param {*} event 
+ */
 function showListItemX(list) {
-   console.log("show X function")
    let paragraph = document.createElement("p");
-         paragraph.innerText = "X"
-         list.appendChild(paragraph);
-         paragraph.className = "paragraph";
-         console.log(paragraph)
-         //calls function that removes X and List
-         paragraph.onclick = removeListItemWithX(paragraph, list);
-}
-/**
- * removes the X after 3s on selected list item if no action called.
- * Removes list and X when X is clicked. 
- * @param {element} paragraph 
- * @param {string} list 
- */
-function removeListItemWithX(paragraph, list) {
-   console.log("remove X function")
-  // const ul = document.getElementById("ul-items");
-  // ul.removeChild(list)
-   
-   // paragraph.className = "paragraph";
-   setTimeout(function() {
-      list.removeChild(paragraph)
-   }, 3000);
+   list.appendChild(paragraph);
+   paragraph.innerText = "X";
+   paragraph.style.fontSize = ".8rem"
+   paragraph.style.width = "1rem";
+   paragraph.style.height = "1rem";
+   paragraph.style.backgroundColor = "red"
+   paragraph.style.marginTop = "-1.2rem"
+   paragraph.style.marginLeft = "-3rem"
+   paragraph.style.borderRadius = "1rem"
+   console.log(paragraph)
+   //calls function that removes X and List
+   paragraph.onclick = removeListContent; //removeListItemWithX(paragraph, list);
 }
 
 
+
 /**
- * removes the list item with the class name active on it.  
+ * removes the list item with the class name ".focus" on it.  
  */
-function removeButton(){
-   const remove = document.getElementsByClassName('active');
+function removeListContent(){
+   const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
 }
 
@@ -119,16 +110,16 @@ function clearToDoList(){
    while (listItem.length > 0) listItem[0].remove();
 }
 
+function clearItem(){
+   const listItem = document.getElementsByClassName('listItem');
+   while (listItem.length > 0) listItem[0].remove();
+}
 
 
-// select item on list
-// add X under as paragraph. 
-// paragraph child to li item. 
-// paragraph onclick remove paragraph
-// paragraph onlick remove paragraph
-// remove ta bort button
+// remove "ta bort" button - DONE -
+// style ".focus" 
+// make only one ".focus" adds not multiple each click
+// remove ".focus" when u choose another list
+// setTimeOut on how long ".focus" will show
 
 
-
-
-// create DOM alert if input field is empty.
