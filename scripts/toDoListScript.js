@@ -38,9 +38,7 @@ function addNewItemToList(input){
    addListIds(input)
 
    if (input === "") {
-      // remove no.1 
       li.parentNode.removeChild(li);
-      
    }
 }
 
@@ -61,16 +59,49 @@ function addListIds(input){
  */
 function selectFromList(event){
    const ul = document.querySelectorAll("li");
+   console.log(event)
+   event.preventDefault()
    for (let list of ul) {
       if (event.target.id === list.id){
          list.style.color = "white";
          list.className = "active";
+         
+         //call function that shows X
+         list.onclick = showListItemX(list); 
+        
       } else { 
          list.style.color = "black";
          list.className = " ";
       }
    } 
 } 
+function showListItemX(list) {
+   console.log("show X function")
+   let paragraph = document.createElement("p");
+         paragraph.innerText = "X"
+         list.appendChild(paragraph);
+         paragraph.className = "paragraph";
+         console.log(paragraph)
+         //calls function that removes X and List
+         paragraph.onclick = removeListItemWithX(paragraph, list);
+}
+/**
+ * removes the X after 3s on selected list item if no action called.
+ * Removes list and X when X is clicked. 
+ * @param {element} paragraph 
+ * @param {string} list 
+ */
+function removeListItemWithX(paragraph, list) {
+   console.log("remove X function")
+  // const ul = document.getElementById("ul-items");
+  // ul.removeChild(list)
+   
+   // paragraph.className = "paragraph";
+   setTimeout(function() {
+      list.removeChild(paragraph)
+   }, 3000);
+}
+
 
 /**
  * removes the list item with the class name active on it.  
