@@ -7,6 +7,14 @@ function addListToCalendarDate(){
    add.addEventListener('click', saveToLocalStorage);
 }
 
+let listItemArray = [];
+
+function addItemsToArray(li){
+   listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
+   listItemArray.push(li);
+   addToLocalStorage(listItemArray);
+}
+
 function addListItemsToArray(li){
    const dates = document.getElementsByClassName('date');
    for(let date of dates){

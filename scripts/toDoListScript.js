@@ -34,6 +34,12 @@ function addNewItemToList(input){
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
    li.className = "listItem";
+
+   addItemsToArray(input)
+   clearInput.value = '';
+   addListItemsToArray(li)
+   addListIds(input)
+
       
    if (input === "") {
       li.parentNode.removeChild(li);
@@ -45,6 +51,7 @@ function addNewItemToList(input){
    addListIds();
    addDateToDoListNumber(li)
     //pleaseAddInput(li, ul, input);
+
 }
 
 /* function pleaseAddInput(li, ul, input){
