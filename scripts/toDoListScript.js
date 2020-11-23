@@ -66,7 +66,8 @@ function selectFromList(event){
         
       } else { 
          list.style.color = "black";
-         list.className = "unsetX";
+         list.className = " ";
+         
          // removeParagraphStyles(list);
       }
    } 
@@ -80,25 +81,16 @@ function selectFromList(event){
 function showListItemX(list) {
    
    let paragraph = document.createElement("p");
-   //paragraph.setAttribute("class", "focus");
    paragraph.className = "x";
    paragraph.innerText = "X";
    list.appendChild(paragraph);
-   // styles remove if css class works.
-   // paragraph.style.fontSize = ".8rem";
-   // paragraph.style.color = "white";
-   // paragraph.style.width = "1rem";
-   // paragraph.style.height = "1rem";
-   // paragraph.style.backgroundColor = "red";
-   // paragraph.style.marginTop = "-1.2rem";
-   // paragraph.style.marginLeft = "-3rem";
-   // paragraph.style.borderRadius = "1rem";
    
-  // document.getElementsByClassName("focus")[0].setAttribute("class", "focus")
 
    paragraph.onclick = removeListContent; //removeListItemWithX(paragraph, list);
 }
 
+
+// should remove css style
 function removeParagraphStyles(list) {
    
    
