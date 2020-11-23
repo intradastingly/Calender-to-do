@@ -31,8 +31,8 @@ function addNewItemToList(input){
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
    li.className = "listItem";
+   addListItemsToArray(input)
    clearInput.value = '';
-   addListItemsToArray(li)
    addListIds(input)
 }
 
