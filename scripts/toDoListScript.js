@@ -67,6 +67,7 @@ function selectFromList(event){
       } else { 
          list.style.color = "black";
          list.className = " ";
+         removeParagraphStyles(list);
       }
    } 
 } 
@@ -90,10 +91,20 @@ function showListItemX(list) {
    paragraph.style.marginLeft = "-3rem"
    paragraph.style.borderRadius = "1rem"
 
+
    paragraph.onclick = removeListContent; //removeListItemWithX(paragraph, list);
+   
 }
 
+function removeParagraphStyles() {
+  
+      let paragraph = document.getElementsByClassName("focus");
+      console.log("hej");
+      
+   
 
+
+}
 /**
  * removes the list item with the class name ".focus" on it.  
  */
