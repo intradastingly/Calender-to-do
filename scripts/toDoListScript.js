@@ -35,11 +35,7 @@ function addNewItemToList(input){
    ul.appendChild(li);
    li.className = "listItem";
 
-   addItemsToArray(input)
-   clearInput.value = '';
-   addListItemsToArray(li)
-   addListIds(input)
-
+   addItemsToArray(li);
       
    if (input === "") {
       li.parentNode.removeChild(li);
@@ -47,11 +43,9 @@ function addNewItemToList(input){
    
    clearInput.value = '';
 
-   addListItemsToArray(li)
    addListIds();
    addDateToDoListNumber(li)
     //pleaseAddInput(li, ul, input);
-
 }
 
 /* function pleaseAddInput(li, ul, input){
