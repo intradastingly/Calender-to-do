@@ -1,6 +1,7 @@
 window.addEventListener('load',main);
 
 function main() {
+    placeHolderArray()
     selectCalendarDate();
     eventListenersButtons();
     currentDate();

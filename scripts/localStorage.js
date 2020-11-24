@@ -1,7 +1,15 @@
 
+  
 let listItemArray = [];
 
+function placeHolderArray() {//place holder array keeps adding on top of itself?
+   listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
+   listItemArray.push([]);
+   addToLocalStorage(listItemArray);
+}
+
 function addItemsToArray(li){
+   listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
    for(let date of dates){
       if(date.classList.contains('active')){
@@ -10,28 +18,34 @@ function addItemsToArray(li){
          if(li.innerText === ""){
             listItemArray.pop();
          }
-         addToLocalStorage(listItemArray)
-      }  
+      }   
    }
+   addToLocalStorage(listItemArray)
 }
 
 function addToLocalStorage(listItemArray){
    localStorage.setItem('todos', JSON.stringify(listItemArray));
 }
 
-function removeFromLocalStorage(){
+function displayFromLocalStorage(){
    const storedList = JSON.parse(localStorage.getItem('todos'));
    const dates = document.getElementsByClassName('date');
-   for (const toDo of storedList){
-      for(const date of dates){
-         console.log(toDo);
-         console.log(date.id);
+   const display = document.getElementById('addItem');
+   const li = document.createElement("li");
+   for(const dateValue of storedList){
+      for (const date of dates){
+         if(date.id === dateValue.datum && date.classList.contains('active')){
+            console.log(dateValue.datum, dateValue.text);
+            li.innerText = dateValue.text;
+            populateList(li);
+         }
       }
-   }
-   //takes array with correct date id
-   //appends all array items to do list
+   } 
 }
 
+function populateList(li) {
+   console.log(li);
+}
 
 //select date 
 //add array to selected date

@@ -1,20 +1,20 @@
+
 /**
  * takes current date and assigns to variable.
  */
 function currentDate() {
     let time = new Date();
     let today = time.getDate();
-    let month = time.getMonth();
     setCurrentDateStyle(today)
 }
 
 /**
  * Adds current month date to date ID so it can be synced with dagar API.
  */
-function setCalenderDatesIds(){
+function setCalenderDatesIds(){ 
     let time = new Date();
     let month = time.getMonth();
-    let year = time.getFullYear()
+    let year = time.getFullYear() 
     const dates = document.getElementsByClassName('date');
     //can't send time variables as function parameters from currentDate^, they come up as undefined???
     for(let i = 0; i < dates.length; i++){
@@ -24,15 +24,16 @@ function setCalenderDatesIds(){
             dates[i].id = `${year}-${month}-` + Number(i + 1);
         }
     }
+}
 
-    function daysInMonth (month, year) {
+  /*   function daysInMonth (month, year) {
         return new Date(year, month, 0).getDate();
     }
     
     daysInMonth(7,2009); 
     daysInMonth(2,2009);
-    console.log(daysInMonth(2,2008)); 
-}
+    console.log(daysInMonth(2,2008));  */
+
 
 /**
  * loops through all calendar dates and applies on click active.
@@ -55,7 +56,7 @@ function boxColorChangeActive(event) {
             date.style.backgroundColor = "rgb(255, 255, 255)";
             date.classList.add("active");
             clearToDoList()
-            removeFromLocalStorage()
+            displayFromLocalStorage()
         } else {
             date.classList.remove('active');
             date.style.backgroundColor = ""; 
@@ -80,7 +81,7 @@ function setCurrentDateStyle(today){
  * Updates circle number based on number of items in the list. 
  * @param {string} li adds list as number to currently selected date.  
  */
-function addDateToDoListNumber(li) {
+function addDateToDoListNumber() {
     const list = document.getElementById('ul-items').children.length;
     const dates = document.getElementsByClassName('date');
     const numberOfToDo = document.createElement('p');
