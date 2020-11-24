@@ -6,6 +6,5 @@ function main() {
     currentDate();
     startClock();
     addListIds();
-    addListToCalendarDate();
     setCalenderDatesIds();
 }

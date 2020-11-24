@@ -29,9 +29,8 @@ function getHolidays (data) {
             holidays.push(day);
             
         }
-        console.log(holidays);
-        
+        //console.log(holidays);
     }
-
+    
 }
 

@@ -4,14 +4,34 @@
 function currentDate() {
     let time = new Date();
     let today = time.getDate();
+    let month = time.getMonth();
     setCurrentDateStyle(today)
 }
 
+/**
+ * Adds current month date to date ID so it can be synced with dagar API.
+ */
 function setCalenderDatesIds(){
+    let time = new Date();
+    let month = time.getMonth();
+    let year = time.getFullYear()
     const dates = document.getElementsByClassName('date');
+    //can't send time variables as function parameters from currentDate^, they come up as undefined???
     for(let i = 0; i < dates.length; i++){
-        dates[i].id =  i + 1;
+        if(i < 9){
+            dates[i].id = `${year}-${month}-0` + Number(i + 1);
+        } else if (i >= 9){
+            dates[i].id = `${year}-${month}-` + Number(i + 1);
+        }
     }
+
+    function daysInMonth (month, year) {
+        return new Date(year, month, 0).getDate();
+    }
+    
+    daysInMonth(7,2009); 
+    daysInMonth(2,2009);
+    console.log(daysInMonth(2,2008)); 
 }
 
 /**
@@ -35,6 +55,7 @@ function boxColorChangeActive(event) {
             date.style.backgroundColor = "rgb(255, 255, 255)";
             date.classList.add("active");
             clearToDoList()
+            removeFromLocalStorage()
         } else {
             date.classList.remove('active');
             date.style.backgroundColor = ""; 
@@ -70,7 +91,6 @@ function addDateToDoListNumber(li) {
     for(const date of dates){
         if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
-            console.log(numberOfToDo);
             if(date.children.length > 1){
                 date.childNodes[1].remove();
             }

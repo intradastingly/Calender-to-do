@@ -1,31 +1,35 @@
 
-function addListToCalendarDate(){
-   const add = document.getElementById('save');
-   //add.onclick = addArrayToSelectedDate;
-   add.addEventListener('click', addItemsToArray);
-}
-
 let listItemArray = [];
 
 function addItemsToArray(li){
-   listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
-   addToLocalStorage(listItemArray);
    const dates = document.getElementsByClassName('date');
    for(let date of dates){
       if(date.classList.contains('active')){
          date = date.id;
-         listItemArray.push({"title":li.innerText, "date": date});
-      } //when input value undefiend is implemented problem will be sovled when adding empty string. 
-   }// items being added when date clicked.
-   addToLocalStorage(listItemArray)
+         listItemArray.push({"text":li.innerText, "datum": date});
+         if(li.innerText === ""){
+            listItemArray.pop();
+         }
+         addToLocalStorage(listItemArray)
+      }  
+   }
 }
 
-function addToLocalStorage(listItemArray) {
+function addToLocalStorage(listItemArray){
    localStorage.setItem('todos', JSON.stringify(listItemArray));
 }
 
-function saveToLocalStorage(){
-   
+function removeFromLocalStorage(){
+   const storedList = JSON.parse(localStorage.getItem('todos'));
+   const dates = document.getElementsByClassName('date');
+   for (const toDo of storedList){
+      for(const date of dates){
+         console.log(toDo);
+         console.log(date.id);
+      }
+   }
+   //takes array with correct date id
+   //appends all array items to do list
 }
 
 

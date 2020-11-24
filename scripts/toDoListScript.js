@@ -10,9 +10,6 @@ function eventListenersButtons(){
 
    const clear = document.getElementById('clear');
    clear.onclick = clearToDoList;
-
-   const save = document.getElementById('save');
-   clear.onclick = saveToLocalStorage;
 }
 
 /**
