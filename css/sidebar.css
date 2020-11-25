@@ -1,3 +1,8 @@
+@font-face{
+    font-family:'digital-clock-font';
+    src: url('../font/digital-7.ttf');
+   }
+
 aside {
     position: fixed;
     width: 15rem;
@@ -86,8 +91,11 @@ li {
     align-items: center;
 }
 .time {
-    font-size: 2rem;
-    color: white;
+    font-family:'digital-clock-font';
+    font-size: 3rem;
+}
+.weekday {
+    font-family:'digital-clock-font';
 }
 .dateMonth {
     padding-left: 0.5rem;
