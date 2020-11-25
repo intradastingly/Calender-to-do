@@ -55,3 +55,5 @@ function populateList(text) {
 //show current list items if any(use array in local storage with dates)
 //populate calendar tr innerHTML with getdate() instead of text. 
 //Remove old to do list from date with rensa button. 
+
+//find more efficient way instead of settimeoutevent to change active class on click in boxColorChangeActive.

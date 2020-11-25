@@ -7,5 +7,4 @@ function main() {
     startClock();
     addListIds();
     setCalenderDatesIds();
-    
 }
