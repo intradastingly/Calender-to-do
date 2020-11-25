@@ -39,7 +39,7 @@ function addNewItemToList(input){
    }
    
    clearInput.value = '';
-   addListItemsToArray(li)
+   // addListItemsToArray(li)
    addListIds(input)
 
    if (input === "") {
@@ -48,7 +48,7 @@ function addNewItemToList(input){
    addListIds();
    addDateToDoListNumber(li)
 }
-
+}
 /** 
 * ads different ids to each list item
 * @param {string} input
@@ -118,14 +118,12 @@ function removeParagraphStyles(list) {
 /**
  * removes the list item with the class name ".focus" on it.  
  */
-function removeListContent(){
 
-function removeButton(){
+function removeListContent(){
 
    const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
 }
-
 /**
  * clears entire to do list
  */
