@@ -58,6 +58,7 @@ function boxColorChangeActive(event) {
             clearToDoList();
             displayFromLocalStorage();
             addListIds();
+            addDateToDoListNumber();
         } else {
             date.classList.remove('active');
             date.style.backgroundColor = ""; 
@@ -101,5 +102,16 @@ function addDateToDoListNumber(li) {
     }
 }
 
+function populateDates(){
+    const storedList = JSON.parse(localStorage.getItem('todos')) || [];
+    const dates = document.getElementsByClassName('date');
+    for(const dateValue of storedList){
+        for (const date of dates){
+           if(date.id === dateValue.datum){
+              console.log(date.id, dateValue.datum)
+           }
+        }
+     } 
+}
 
 
