@@ -36,17 +36,19 @@ function getHolidays (data) {
 
 function displayHolidays(holidays) {
     const dates = document.getElementsByClassName('date');
-    const paragraph = document.createElement('p');    
+    const paragraph = document.createElement('p'); 
+    paragraph.className = "helgdag";   
     for (const day of holidays) {
         for (const date of dates) {
             if(day.datum === date.id) {
-                console.log(day.datum )
-                paragraph.innerText = day.helgdag;
+                paragraph.innerHTML = day.helgdag;
                 date.appendChild(paragraph);
             }
         }
     }
 }
+
+
 
 
 /*function displayFromLocalStorage(){

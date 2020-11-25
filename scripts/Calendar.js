@@ -96,7 +96,7 @@ function addDateToDoListNumber(li) {
         if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
             if(date.children.length > 1){
-                date.childNodes[1].remove();
+                date.childNodes[3].remove();
                 //send in length of array from localStorage function? 
             }
         }
