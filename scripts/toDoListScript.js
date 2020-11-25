@@ -115,6 +115,9 @@ function removeParagraphStyles(list) {
 function removeListContent(){
    const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
+
+// when remove from todo also remove from local storage. 
+// use array  in localstorage.js to POP!!!!!!!
 }
 
 /**
