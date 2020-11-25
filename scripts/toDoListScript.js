@@ -63,12 +63,12 @@ function selectFromList(event){
          list.style.color = "red";
          list.className = "focus";
          list.onclick = showListItemX(list); 
+         removeParagraphStyles(list);
         
       } else { 
          list.style.color = "black";
          list.className = " ";
          
-         removeParagraphStyles("x");
       }
    } 
 } 
@@ -92,15 +92,19 @@ function showListItemX(list) {
 
 
 // should remove css style when pressing second list item
-function removeParagraphStyles() {
+function removeParagraphStyles(list) {
    let element = document.getElementById("x");
-   console.log(element);
-
-
+   console.log("poop")
+   
+   setTimeout(function() {
+      list.removeChild(element)
+   }, 1000);
+   
+/*
    setTimeout (function(){
       element.style.display = "none";
    }, 3000)
-   
+   */
       
    // GET THIS TO WORK PROPERLY THEN IM DONE
 
