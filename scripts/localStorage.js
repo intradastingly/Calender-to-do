@@ -27,7 +27,7 @@ function addToLocalStorage(listItemArray){
 }
 
 function displayFromLocalStorage(){
-   const storedList = JSON.parse(localStorage.getItem('todos'));
+   const storedList = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
    for(const dateValue of storedList){
       for (const date of dates){
