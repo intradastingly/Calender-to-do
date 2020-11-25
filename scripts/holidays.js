@@ -22,16 +22,20 @@ async function fetchAllDays() {
 }
 /** Filter out holidays and push them to an array  */
 function getHolidays (data) {
+    
     const holidays = [];
 
-    for (day in data.dagar) {
+    for (const day of data.dagar) {
+        
         if (day.helgdag) {
             holidays.push(day);
-            
+             /*console.log(day.datum);*/
         }
-        /*console.log(holidays);*/
         
+        /*console.log(holidays);*/ 
     }
 
 }
+
+
 
