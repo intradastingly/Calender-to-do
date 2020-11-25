@@ -121,7 +121,8 @@ function removeListContent(){
 function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
-   currentToDoList = [];
+   listItemArray = [];
+   returnedList = [];
 }
 
 
