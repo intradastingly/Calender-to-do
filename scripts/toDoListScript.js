@@ -60,7 +60,7 @@ function selectFromList(event){
    const ul = document.querySelectorAll("li");
    for (let list of ul) {
       if (event.target.id === list.id){
-         list.style.color = "red";
+         list.style.color = "black";
          list.className = "focus";
          list.onclick = showListItemX(list); 
          removeParagraphStyles(list);
@@ -75,41 +75,34 @@ function selectFromList(event){
 
 /**
  * shows X when pressed specifik list
- * @param {*} list 
- * @param {*} event 
+ * @param {HTMLelement} list 
  */
 function showListItemX(list) {
-   
    let paragraph = document.createElement("p");
    paragraph.className = "x";
    paragraph.id = "x"
    paragraph.innerText = "X";
    list.appendChild(paragraph);
    
-
-   paragraph.onclick = removeListContent; //removeListItemWithX(paragraph, list);
+   
+   paragraph.onclick = removeListContent;
 }
 
 
-// should remove css style when pressing second list item
+/**
+ * removes paragraph after 1s
+ * @param {HTMLelement} list 
+ */
 function removeParagraphStyles(list) {
    let element = document.getElementById("x");
-   console.log("poop")
    
    setTimeout(function() {
+
       list.removeChild(element)
-   }, 1000);
+   }, 5000);
    
-/*
-   setTimeout (function(){
-      element.style.display = "none";
-   }, 3000)
-   */
-      
-   // GET THIS TO WORK PROPERLY THEN IM DONE
-
-
 }
+
 /**
  * removes the list item with the class name ".focus" on it.  
  */
@@ -130,12 +123,4 @@ function clearItem(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
 }
-
-
-// remove "ta bort" button - DONE -
-// style ".focus" - DONE -
-// make only one ".focus" adds not multiple each click
-// remove ".focus" when u choose another list
-// setTimeOut on how long ".focus" will show
-
 
