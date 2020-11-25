@@ -55,7 +55,7 @@ aside {
 .listContainer {
     display: flex;
     width: 14rem;
-    height: 10rem;
+    height: auto;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.295);
     border-radius: 1rem;
@@ -68,8 +68,10 @@ aside {
 }
 
 .ul-items {
+    padding: 0.2rem;
     width: 5rem;
 } 
+
 li {
     font-size: 1.2rem;
     cursor: pointer;

@@ -78,6 +78,8 @@ function selectFromList(event){
    } //add splice array of seleted indexof???
 } 
 
+
+
 /**
  * shows X when pressed specifik list
  * @param {string} list 
