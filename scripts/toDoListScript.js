@@ -25,18 +25,28 @@ function addNewItemToList(input){
    const li = document.createElement("li");
    const clearInput = document.getElementById('addItem');
 
+
    li.setAttribute("id", input);
+
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
    li.className = "listItem";
-   clearInput.value = '';
 
+   addItemsToArray(li);
+      
+   if (input === "") {
+      li.parentNode.removeChild(li);
+   }
+   
+   clearInput.value = '';
    addListItemsToArray(li)
    addListIds(input)
 
    if (input === "") {
       li.parentNode.removeChild(li);
-   }
+
+   addListIds();
+   addDateToDoListNumber(li)
 }
 
 /** 
@@ -47,7 +57,7 @@ function addListIds(input){
    const ul = document.querySelectorAll("#ul-items li");
    for(let i = 0; i < ul.length; i++){
       ul[i].addEventListener('click', selectFromList); 
-      ul[i].id += i;
+      ul[i].id = i + 'l';
    }
 }
 
@@ -65,18 +75,22 @@ function selectFromList(event){
          list.onclick = showListItemX(list); 
          removeParagraphStyles(list);
         
+
+         list.style.color = "white";
+         list.className = "focus";
       } else { 
          list.style.color = "black";
          list.className = " ";
          
       }
-   } 
+   } //add splice array of seleted indexof???
 } 
 
 /**
  * shows X when pressed specifik list
  * @param {string} list 
  */
+
 function showListItemX(list) {
    let paragraph = document.createElement("p");
    paragraph.className = "x";
@@ -105,6 +119,9 @@ function removeParagraphStyles(list) {
  * removes the list item with the class name ".focus" on it.  
  */
 function removeListContent(){
+
+function removeButton(){
+
    const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
 }
@@ -115,10 +132,14 @@ function removeListContent(){
 function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
+   currentToDoList = [];
 }
+
 
 function clearItem(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
 }
+
+
 

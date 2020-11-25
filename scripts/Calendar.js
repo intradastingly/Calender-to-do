@@ -1,3 +1,4 @@
+
 /**
  * takes current date and assigns to variable.
  */
@@ -7,12 +8,33 @@ function currentDate() {
     setCurrentDateStyle(today)
 }
 
-function setCalenderDatesIds(){
+/**
+ * Adds current month date to date ID so it can be synced with dagar API.
+ */
+function setCalenderDatesIds(){ 
+    let time = new Date();
+    let month = time.getMonth();
+    let year = time.getFullYear() 
     const dates = document.getElementsByClassName('date');
+    //can't send time variables as function parameters from currentDate^, they come up as undefined???
     for(let i = 0; i < dates.length; i++){
-        dates[i].id =  i + 1;
+        if(i < 9){
+            dates[i].id = `${year}-${month}-0` + Number(i + 1);
+        } else if (i >= 9){
+            dates[i].id = `${year}-${month}-` + Number(i + 1);
+        }
     }
 }
+
+  /*   function daysInMonth (month, year) {
+        return new Date(year, month, 0).getDate();
+    }
+    
+    daysInMonth(7,2009); 
+    daysInMonth(2,2009);
+    console.log(daysInMonth(2,2008));  */
+
+
 /**
  * loops through all calendar dates and applies on click active.
  */
@@ -32,14 +54,11 @@ function boxColorChangeActive(event) {
     for(const date of dates){
         if(date.id === event.target.id){
             date.style.backgroundColor = "rgb(255, 255, 255)";
-            date.id = date.id + '-active';
-        } else if (date.id.length === 8){
-            const str = date.id.slice(0,-7);
-            date.id = str;
-            date.style.backgroundColor = ""; 
-        } else if(date.id.length === 9){
-            const str = date.id.slice(0,-7);
-            date.id = str;
+            date.classList.add("active");
+            clearToDoList()
+            displayFromLocalStorage()
+        } else {
+            date.classList.remove('active');
             date.style.backgroundColor = ""; 
         }
     }
@@ -58,42 +77,28 @@ function setCurrentDateStyle(today){
     }
 }
 
-function addListToCalendarDate(){
-    const add = document.getElementById('add');
-    add.onclick = addArrayToSelectedDate;
-    add.onclick = addDateToDoListNumber;
-}
-
 /**
- * 
- * @param {string} li adds list as number to currently selected date.
+ * Updates circle number based on number of items in the list. 
+ * @param {string} li adds list as number to currently selected date.  
  */
-function addDateToDoListNumber(event) {
+function addDateToDoListNumber() {
     const list = document.getElementById('ul-items').children.length;
     const dates = document.getElementsByClassName('date');
     const numberOfToDo = document.createElement('p');
+    
     numberOfToDo.className = "toDoCircle";
-    numberOfToDo.innerText = list;
+    numberOfToDo.innerHTML = list;
+    //bug, when date reselected to do list numbers are set back to 1??? 
     for(const date of dates){
-        if(date.id === date.id){
+        if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
-        } 
+            if(date.children.length > 1){
+                date.childNodes[1].remove();
+                //send in length of array from localStorage function? 
+            }
+        }
     }
 }
-  
-    
-//add to do list to localstorage.
-//display today list on day it was selected on. 
-//show current list items if any(use array)
-//add list items to an array and display array into list.
-
-//to change dates use ${} to change date of API url that updates calendar.
-
-//populate calendar tr innerHTML with getdate() instead of text. 
 
 
-var text = 'abcde';
-var substring = text.slice(0, -3);
-
-console.log(substring);
 
