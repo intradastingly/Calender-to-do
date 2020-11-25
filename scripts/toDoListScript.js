@@ -75,7 +75,7 @@ function selectFromList(event){
 
 /**
  * shows X when pressed specifik list
- * @param {HTMLelement} list 
+ * @param {string} list 
  */
 function showListItemX(list) {
    let paragraph = document.createElement("p");
@@ -90,17 +90,15 @@ function showListItemX(list) {
 
 
 /**
- * removes paragraph after 1s
- * @param {HTMLelement} list 
+ * removes selected list child after 1s
+ * @param {string} list 
  */
 function removeParagraphStyles(list) {
-   let element = document.getElementById("x");
-   
    setTimeout(function() {
-
-      list.removeChild(element)
-   }, 5000);
-   
+      while (list.children[0]) {
+         list.removeChild(list.children[0])
+      }
+   }, 1000);
 }
 
 /**
