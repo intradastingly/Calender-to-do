@@ -25,35 +25,27 @@ function addNewItemToList(input){
    const li = document.createElement("li");
    const clearInput = document.getElementById('addItem');
 
-
    li.setAttribute("id", input);
-
    li.appendChild(document.createTextNode(input)); // gives all li differents textNodes with input text.
    ul.appendChild(li);
    li.className = "listItem";
 
-   addItemsToArray(li);
-      
    if (input === "") {
       li.parentNode.removeChild(li);
    }
    
    clearInput.value = '';
-   // addListItemsToArray(li)
-   addListIds(input)
-
-   if (input === "") {
-      li.parentNode.removeChild(li);
-
-   addListIds();
+  
+   addItemsToArray(li);
+   addListIds()
    addDateToDoListNumber(li)
 }
-}
+
 /** 
 * ads different ids to each list item
-* @param {string} input
+* @param {string} 
 */
-function addListIds(input){
+function addListIds(){
    const ul = document.querySelectorAll("#ul-items li");
    for(let i = 0; i < ul.length; i++){
       ul[i].addEventListener('click', selectFromList); 
@@ -118,12 +110,11 @@ function removeParagraphStyles(list) {
 /**
  * removes the list item with the class name ".focus" on it.  
  */
-
 function removeListContent(){
-
    const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
 }
+
 /**
  * clears entire to do list
  */
@@ -131,12 +122,6 @@ function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
    currentToDoList = [];
-}
-
-
-function clearItem(){
-   const listItem = document.getElementsByClassName('listItem');
-   while (listItem.length > 0) listItem[0].remove();
 }
 
 
