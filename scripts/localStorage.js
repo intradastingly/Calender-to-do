@@ -1,12 +1,6 @@
 let listItemArray = [];
 let returnedList = [];
 
-function placeHolderArray() {//place holder array keeps adding on top of itself?
-   listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
-   listItemArray.push([]);
-   addToLocalStorage(listItemArray);
-}
-
 function addItemsToArray(li){
    listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
@@ -27,7 +21,7 @@ function addToLocalStorage(listItemArray){
 }
 
 function displayFromLocalStorage(){
-   const storedList = JSON.parse(localStorage.getItem('todos'));
+   const storedList = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
    for(const dateValue of storedList){
       for (const date of dates){
@@ -44,11 +38,12 @@ function populateList(text) {
    let li = document.createElement('li');
    returnedList.push(text)
    for(const listItem of returnedList){
-      li.appendChild(document.createTextNode(text)); // gives all li differents textNodes with input text.
+      li.appendChild(document.createTextNode(text)); 
       display.appendChild(li);
       li.className = "listItem";
       returnedList = []
    }
+   console.log(returnedList)
 }
 
 

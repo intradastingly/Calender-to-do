@@ -58,6 +58,7 @@ function boxColorChangeActive(event) {
             clearToDoList();
             displayFromLocalStorage();
             addListIds();
+            addDateToDoListNumber();
         } else {
             date.classList.remove('active');
             date.style.backgroundColor = ""; 
