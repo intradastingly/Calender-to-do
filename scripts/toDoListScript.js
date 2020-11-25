@@ -68,7 +68,7 @@ function selectFromList(event){
          removeParagraphStyles(list);
         
 
-         list.style.color = "white";
+         list.style.color = "red";
          list.className = "focus";
       } else { 
          list.style.color = "black";
