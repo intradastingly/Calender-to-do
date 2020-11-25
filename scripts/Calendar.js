@@ -13,8 +13,9 @@ function currentDate() {
  */
 function setCalenderDatesIds(){ 
     let time = new Date();
-    let month = time.getMonth();
+    //let month = time.getMonth();
     let year = time.getFullYear() 
+    let month = 12;
     const dates = document.getElementsByClassName('date');
     //can't send time variables as function parameters from currentDate^, they come up as undefined???
     for(let i = 0; i < dates.length; i++){
