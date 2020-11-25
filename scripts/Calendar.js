@@ -88,12 +88,13 @@ function addDateToDoListNumber() {
     
     numberOfToDo.className = "toDoCircle";
     numberOfToDo.innerHTML = list;
-
+    //bug, when date reselected to do list numbers are set back to 1??? 
     for(const date of dates){
         if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
             if(date.children.length > 1){
                 date.childNodes[1].remove();
+                //send in length of array from localStorage function? 
             }
         }
     }

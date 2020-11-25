@@ -42,19 +42,7 @@ function addNewItemToList(input){
 
    addListIds();
    addDateToDoListNumber(li)
-    //pleaseAddInput(li, ul, input);
 }
-
-/* function pleaseAddInput(li, ul, input){
-   if(input.length === 0){
-      const textWarning = document.createElement("p");
-      textWarning.innerHTML = "Please add an Item";
-      textWarning.className = "warning";
-      ul.appendChild(textWarning);
-   } else if () {
-
-   }
-} */
 
 /** 
 * ads different ids to each list item

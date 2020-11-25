@@ -23,9 +23,13 @@ async function fetchAllDays() {
 /** Filter out holidays and push them to an array  */
 function getHolidays (data) {
     const holidays = [];
-
+    const dates = document.getElementsByClassName('date');
+    for(const date of dates)
     for (const day of data.dagar) {
         if (day.helgdag) {
+            if(day.datum === date.id)
+            console.log(day.datum)
+
             holidays.push(day);
             
         }
