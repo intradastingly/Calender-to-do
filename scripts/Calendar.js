@@ -1,4 +1,3 @@
-
 /**
  * takes current date and assigns to variable.
  */
@@ -7,44 +6,44 @@ function currentDate() {
     let today = time.getDate();
     setCurrentDateStyle(today)
 } 
-
-/**
- * gets number of days in specified month
- * @param {Date} month 
- * @param {Date} year 
- */
+ /**
+  * Gets number of days in a month.
+  * @param {Date} month 
+  * @param {Date} year 
+  */
 function daysInMonth (month, year) { 
     return new Date(year, month, 0).getDate(); 
 } 
 
 /**
- * 
+ * Applies date number to DOM. checks month length.
  * @param {Date} month 
  * @param {Date} year 
  */
-function populateCellsWithCurrentMonthDates(month,year){
+function populateCellsWithCurrentMonthDates(month, year){
     const dates= document.getElementsByClassName('date');
-    const thisMonthDays = daysInMonth(month, year);
-    month += 1;
+    let thisMonthDays = daysInMonth(month, year);
+    console.log(month + ' pop')
+    console.log(thisMonthDays)
     for(let i = 0; i < dates.length; i++){
         dates[i].innerText = i + 1;
-        if(dates[i].innerText >= thisMonthDays) { 
-            dates[i].innerText = '';
+        if(dates[i].innerText > thisMonthDays) { 
+            dates[i].remove();
         }//fix correct date
     }
 }
-
 /**
  * Adds current month date to date ID so it can be synced with dagar API.
  * takes current month and year and applies it to calendar.
+ * @param {date} month 
  */
 function setCalenderDatesIds(month){  
     let time = new Date();
     let year = time.getFullYear()
     const dates = document.getElementsByClassName('date');
-    month += 1;
-    console.log(month);
-    if(month < 10){ month = '0' + month; }
+    month = 11;
+    console.log(month + ' pop')
+    if(month < 10){ month = '0' + month;}
     for(let i = 0; i < dates.length; i++){
         if(i < 9){
             dates[i].id = `${year}-${month}-0` + (i + 1);

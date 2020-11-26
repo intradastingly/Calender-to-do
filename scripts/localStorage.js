@@ -57,17 +57,6 @@ function populateList(text) {
    }
 }
 
-
-//can't send date() vars as function paramteres???
-//bug, when date reselected to do list numbers are set back to 1??? \
-//place holder array keeps adding on top of itself?
-
-//display today list on day it was selected on. 
-//show current list items if any(use array in local storage with dates)
-//populate calendar tr innerHTML with getdate() instead of text. 
-//Remove old to do list from date with rensa button. 
-
-//box value change
-
 //rensa and ta bort buttons need to work.
-//send time variables as const? 
+//set limit on month number.
+//get days to line up 
