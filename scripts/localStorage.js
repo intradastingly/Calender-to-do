@@ -70,3 +70,4 @@ function populateList(text) {
 //box value change
 
 //rensa and ta bort buttons need to work.
+//send time variables as const? 

@@ -5,26 +5,49 @@
 function currentDate() {
     let time = new Date();
     let today = time.getDate();
+    let month = time.getMonth()
+    let year = time.getFullYear()
     setCurrentDateStyle(today)
+    populateCellsWithCurrentMonthDates(month,year)
+} 
+
+/**
+ * gets number of days in specified month
+ * @param {Date} month 
+ * @param {Date} year 
+ */
+function daysInMonth (month, year) { 
+    return new Date(year, month, 0).getDate(); 
+} 
+
+function populateCellsWithCurrentMonthDates(month,year){
+    const dates= document.getElementsByClassName('date');
+    const thisMonthDays = daysInMonth(month, year);
+    month += 1;
+    for(let i = 0; i < dates.length; i++){
+        dates[i].innerText = i + 1;
+        if(dates[i].innerText >= thisMonthDays) { 
+            dates[i].innerText = '';
+        }
+    }
 }
 
 /**
  * Adds current month date to date ID so it can be synced with dagar API.
  * takes current month and year and applies it to calendar.
  */
-function setCalenderDatesIds(){ 
+function setCalenderDatesIds(){  
     let time = new Date();
-    //let month = time.getMonth();
-    let month = 12;
-    let year = time.getFullYear() 
+    let today = time.getDate();
+    let month = time.getMonth()
+    let year = time.getFullYear()
     const dates = document.getElementsByClassName('date');
-    //can't send time variables as function parameters from currentDate^, they come up as undefined???
     if(month < 10){ month = '0' + month; }
     for(let i = 0; i < dates.length; i++){
         if(i < 9){
-            dates[i].id = `${year}-${month}-0` + Number(i + 1);
+            dates[i].id = year + '-' + month + '-' + '0' + Number(i + 1);
         } else if (i >= 9){
-            dates[i].id = `${year}-${month}-` + Number(i + 1);
+            dates[i].id = year + '-' + month + '-' + Number(i + 1);
         }
     }
 }
@@ -116,5 +139,6 @@ function populateDates(){
 }
 
 function applyListNumbers(paragraph){
-    console.log(paragraph)
+    //console.log(paragraph)
 }
+

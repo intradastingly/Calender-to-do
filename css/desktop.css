@@ -32,6 +32,10 @@ table {
 .arrow {
     font-size: 2rem;;    
    }
+.arrow:hover {
+    color: black;
+    cursor: pointer;
+}
 
 td {
     vertical-align: top;

@@ -1,21 +1,39 @@
-/** Start the script */
-window.addEventListener('load', getDate);
-
 /** Get the current date */
 function getDate() {
-    let date = new Date();
+    
+    const date = new Date();
+    
+    getMonth(date)
+}  
 
-    fetchMonth(date);
-}
-
-/** Get the current month and display the current month */
-function fetchMonth(date) {
+/** Get the current month
+ * @param {date} currentDate
+ */
+function getMonth(date) {
     
     let month = date.getMonth();
+    changeMonth(month);
+}
+
+/** Get the eventlisteners for the arrowkeys to switch between months in the calendar */
+function changeMonth(month) {
+    
+    const arrowLeft = document.getElementById('arrowLeft');
+    const arrowRight = document.getElementById('arrowRight');
+    
+    arrowLeft.addEventListener('click',() =>{month--; fetchMonth(month);})
+    arrowRight.addEventListener('click',() =>{month++;fetchMonth(month);})
+    
+    fetchMonth(month)  
+}
+
+/** Fetch the current month and display the current month in calendar.
+ * @param {Month} month 
+ * */
+function fetchMonth(month) {
+    
     let displayMonth = document.getElementById('currentMonth');
     
-    currentMonth.innerHTML = month;
-
     switch (month) {
         case 0:
             displayMonth.innerHTML = 'Januari';
@@ -54,4 +72,5 @@ function fetchMonth(date) {
             displayMonth.innerHTML = 'December';
             break;
     }
+    
 }
