@@ -10,7 +10,6 @@ async function fetchAllDays() {
         console.error(error);
     }   
 }
-
 /**
  * Takes date from API and 
  * @param {Object} data 
@@ -19,12 +18,8 @@ function getDates (data) {
     const weekdays = [];
     const holidays = [];
     for (const day of data.dagar) {
-        if(day.veckodag){
-            weekdays.push(day);
-        }
-        if (day.helgdag) {
-            holidays.push(day);
-        }
+         if(day.veckodag){weekdays.push(day);}
+         if(day.helgdag) {holidays.push(day);}
     }
     displayWeekdays(weekdays)
     displayHolidays(holidays);
@@ -48,7 +43,10 @@ function displayHolidays(holidays) {
         }
     }
 }
-
+/**
+ * Assigns weekday text to all dates
+ * @param {Object} weekdays
+ */
 function displayWeekdays(weekdays) {
     const dates = document.getElementsByClassName('date');
     for (const weekday of weekdays) {

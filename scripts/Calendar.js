@@ -29,7 +29,7 @@ function populateCellsWithCurrentMonthDates(month, year){
         dates[i].innerText = i + 1;
         if(dates[i].innerText > thisMonthDays) { 
             dates[i].remove();
-        }//fix correct date
+        }
     }
 }
 /**
@@ -42,6 +42,7 @@ function setCalenderDatesIds(month){
     let year = time.getFullYear()
     const dates = document.getElementsByClassName('date');
     month = 12;
+    //undefined???
     console.log(month + ' pop')
     if(month < 10){ month = '0' + month;}
     for(let i = 0; i < dates.length; i++){
@@ -51,11 +52,9 @@ function setCalenderDatesIds(month){
         } else if (i >= 9){
             dates[i].id = `${year}-${month}-` + (i + 1);
             //console.log(dates[i].id)
-        }//fix undefined
+        }
     }
 }
-
-
 /**
  * Loop that applies click event to individual date element.  
  */
@@ -65,7 +64,6 @@ function selectCalendarDate(){
         dates[i].addEventListener('click',boxColorChangeActive);
     }
 }
-
 /**
  * If statements remove last 7 of the string, removing active status when other element is clicked. 
  * @param {Event} event changes color of box based on click and adds active ID.
@@ -86,7 +84,6 @@ function boxColorChangeActive(event) {
         }
     }
 }
-
 /**
  * 
  * @param {Date} today applies styling to current date of the month in the calendar.
@@ -99,7 +96,6 @@ function setCurrentDateStyle(today){
         }
     }
 }
-
 /**
  * Updates circle number based on number of items in the list. 
  */
@@ -120,7 +116,6 @@ function addDateToDoListNumber() {
         }
     }
 }
-
 /**
  * Populates dates with to do listicles that were previously saved on the specific dates. 
  */
@@ -140,7 +135,6 @@ function populateDates(){
         }
     } 
 }
-
 function applyListNumbers(paragraph){
     //console.log(paragraph)
 }
