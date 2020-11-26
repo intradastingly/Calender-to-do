@@ -33,7 +33,7 @@ aside {
     padding: .4rem 0;
     background-color:tomato;
     margin-left: .5rem;
-    transition: background-color 300ms;
+   
     text-decoration: solid ;
     color: white;
 }
@@ -44,11 +44,13 @@ aside {
 
 .btn-add, .btn-clear {
     margin: 0.3rem;
+    transition: 10ms;
 }
 
 .btn:active, .btn-add:active, .btn-clear:active {
     background-color:#ffffff;
     color: black;
+    transition: 10ms;
 }
 
 .todo {

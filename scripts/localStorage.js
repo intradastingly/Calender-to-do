@@ -1,6 +1,10 @@
 let listItemArray = [];
 let returnedList = [];
 
+/**
+ * 
+ * @param {String} li 
+ */
 function addItemsToArray(li){
    listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
@@ -16,6 +20,10 @@ function addItemsToArray(li){
    addToLocalStorage(listItemArray)
 }
 
+/**
+ * 
+ * @param {Array} listItemArray 
+ */
 function addToLocalStorage(listItemArray){
    localStorage.setItem('todos', JSON.stringify(listItemArray));
 }
@@ -33,6 +41,10 @@ function displayFromLocalStorage(){
    } 
 }
 
+/**
+ * 
+ * @param {String} text 
+ */
 function populateList(text) {
    const display = document.getElementById('ul-items');
    let li = document.createElement('li');
@@ -43,7 +55,6 @@ function populateList(text) {
       li.className = "listItem";
       returnedList = []
    }
-   console.log(returnedList)
 }
 
 
@@ -56,4 +67,6 @@ function populateList(text) {
 //populate calendar tr innerHTML with getdate() instead of text. 
 //Remove old to do list from date with rensa button. 
 
-//find more efficient way instead of settimeoutevent to change active class on click in boxColorChangeActive.
+//box value change
+
+//rensa and ta bort buttons need to work.

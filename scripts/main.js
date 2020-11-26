@@ -7,4 +7,6 @@ function main() {
     startClock();
     addListIds();
     setCalenderDatesIds();
+    populateDates()
+    fetchAllDays()
 }
