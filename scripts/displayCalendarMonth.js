@@ -31,6 +31,8 @@ function changeMonth(month) {
  * @param {Month} month 
  * */
 function fetchMonth(month) {
+    let time = new Date();
+    let year = time.getFullYear()
     
     let displayMonth = document.getElementById('currentMonth');
     
@@ -72,5 +74,6 @@ function fetchMonth(month) {
             displayMonth.innerHTML = 'December';
             break;
     }
-    
+    setCalenderDatesIds(month);//not working properly returns undefined
+    populateCellsWithCurrentMonthDates(month,year);//does display correct dates 
 }
