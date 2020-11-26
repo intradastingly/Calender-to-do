@@ -41,7 +41,7 @@ function setCalenderDatesIds(month){
     let time = new Date();
     let year = time.getFullYear()
     const dates = document.getElementsByClassName('date');
-    month = 11;
+    month = 12;
     console.log(month + ' pop')
     if(month < 10){ month = '0' + month;}
     for(let i = 0; i < dates.length; i++){

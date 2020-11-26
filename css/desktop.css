@@ -69,7 +69,7 @@ body {
 .toDoCircle {
     font-size: 0.8rem;
     padding: 0.15rem;
-    margin: 1rem 0.5rem 0.5rem auto;
+    margin: 2rem 0.5rem 0.5rem auto;
     border-radius: 50%;
     background-color: red;
     text-align: center;
@@ -78,6 +78,15 @@ body {
 }
 
 .helgdag {
+    margin-top: 1rem;
+    font-size: 0.6rem;
+    color: rgb(255, 82, 82);
+    display: flex;
+    text-align: center;
+    position: absolute;
+}
+
+.veckodag {
     margin-top: 0.095rem;
     font-size: 0.6rem;
     color: rgb(143, 143, 143);

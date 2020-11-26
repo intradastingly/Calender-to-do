@@ -4,36 +4,29 @@ async function fetchAllDays() {
         const url = 'https://api.dryg.net/dagar/v2.1/2020';
         const result = await fetch(url);
         const data = await result.json();
-        getHolidays(data);
-        getWeekDays(data);
+        getDates(data);
     }
      catch (error) {
         console.error(error);
     }   
 }
 
-function getWeekDays(data) {
-    
-    const weekdays = [];
-    for(const day of data.dagar){
-        if(day.veckodag){
-            weekdays.push(day);
-        }
-    }
-    displayHolidays(weekdays)
-    console.log(weekdays)
-}
 /**
  * Takes date from API and 
  * @param {Object} data 
  */
-function getHolidays (data) {
+function getDates (data) {
+    const weekdays = [];
     const holidays = [];
     for (const day of data.dagar) {
+        if(day.veckodag){
+            weekdays.push(day);
+        }
         if (day.helgdag) {
             holidays.push(day);
         }
     }
+    displayWeekdays(weekdays)
     displayHolidays(holidays);
 }
 /**
@@ -56,14 +49,14 @@ function displayHolidays(holidays) {
     }
 }
 
-function displayHolidays(weekdays) {
+function displayWeekdays(weekdays) {
     const dates = document.getElementsByClassName('date');
     for (const weekday of weekdays) {
         for (const date of dates) {
             if(weekday.datum === date.id) {
                 let box = document.getElementById(date.id);
-                let paragraph = document.createElement('a'); 
-                paragraph.className = "helgdag";
+                let paragraph = document.createElement('p'); 
+                paragraph.className = "veckodag";
                 paragraph.innerText = weekday.veckodag;
                 box.appendChild(paragraph); 
             }
