@@ -70,6 +70,12 @@ function selectFromList(event){
 function removeButton(){
    const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
+
+
+   let items = JSON.parse(localStorage.getItem("todos"));
+   items.splice(items, 1);
+   localStorage.setItem("todos", JSON.stringify(items));
+
 }
 
 function clearToDoList(){

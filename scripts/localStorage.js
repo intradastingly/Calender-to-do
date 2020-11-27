@@ -1,3 +1,4 @@
+
 let listItemArray = [];
 let returnedList = [];
 /**
