@@ -74,7 +74,6 @@ function fetchMonth(month) {
             displayMonth.innerHTML = 'December';
             break;
     }
-    month = 12;
     setCalenderDatesIds(month);//not working properly returns NaN
     populateCellsWithCurrentMonthDates(month,year);//does display correct dates 
 }
