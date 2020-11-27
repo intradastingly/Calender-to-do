@@ -29,7 +29,6 @@ function getDates (data) {
  * @param {Object} holidays 
  */
 function displayHolidays(holidays) {
-    console.log(holidays)
     const dates = document.getElementsByClassName('date');
     for (const day of holidays) {
         for (const date of dates) {
