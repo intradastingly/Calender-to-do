@@ -10,4 +10,5 @@ function main() {
     populateDates();
     fetchAllDays();
     daysInMonth();
+    currentStateLocalStorage();
 }

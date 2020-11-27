@@ -67,10 +67,18 @@ function selectFromList(event){
    } 
 } 
 
-function removeButton(){
+function removeButton(storedList){
    const remove = document.getElementsByClassName('focus');
-   while (remove.length > 0) remove[0].remove();
-}
+      for(const list of storedList){
+         console.log(list)
+         }
+      for(const toRemove of remove) {
+         console.log(remove)
+      } 
+      
+      while (remove.length > 0) remove[0].remove();
+   }
+
 
 function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
@@ -78,6 +86,7 @@ function clearToDoList(){
    listItemArray = [];
    returnedList = [];
 }
+
 // PARAGRAPH RED X CODE 
 /**loops trough all list items and checks which list item is clicked
  * @param {click} event  and turns it white and adds a class
@@ -133,22 +142,5 @@ function clearToDoList(){
 //       }
 //    }, 1000);
 // }
-
-/**
- * removes the list item with the class name ".focus" on it.  
- */
-
-
-function removeListContent(listItemArray){
-   const remove = document.getElementsByClassName('focus');
-   while (remove.length > 0) remove[0].remove();
-   //addToLocalStorage(listItemArray)
-}
-
-
-/**
- * clears entire to do list
- */
-
 
 
