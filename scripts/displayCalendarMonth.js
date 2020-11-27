@@ -13,6 +13,7 @@ function getMonth(date) {
     
     let month = date.getMonth();
     changeMonth(month);
+    
 }
 
 /** Get the eventlisteners for the arrowkeys to switch between months in the calendar */
@@ -23,7 +24,7 @@ function changeMonth(month) {
     
     arrowLeft.addEventListener('click',() =>{month--; fetchMonth(month);})
     arrowRight.addEventListener('click',() =>{month++;fetchMonth(month);})
-    
+   
     fetchMonth(month)  
 }
 
@@ -31,46 +32,49 @@ function changeMonth(month) {
  * @param {Month} month 
  * */
 function fetchMonth(month) {
-    
+    let time = new Date();
+    let year = time.getFullYear()
     let displayMonth = document.getElementById('currentMonth');
-    
+    month += 1;
     switch (month) {
-        case 0:
+        case 1:
             displayMonth.innerHTML = 'Januari';
             break;
-        case 1:
+        case 2:
             displayMonth.innerHTML = 'Februari';
             break;
-        case 2:
+        case 3:
             displayMonth.innerHTML = 'Mars';
             break;
-        case 3:
+        case 4:
             displayMonth.innerHTML = 'April';
             break;
-        case 4:
+        case 5:
             displayMonth.innerHTML = 'Maj';
             break;
-        case 5:
+        case 6:
             displayMonth.innerHTML = 'Juni';
             break;
-        case 6:
+        case 7:
             currentMonth.innerHTML = 'Juli';
             break;
-        case 7:
+        case 8:
             displayMonth.innerHTML = 'Augusti';
             break;
-        case 8:
+        case 9:
             displayMonth.innerHTML = 'September';
             break;
-        case 9:
+        case 10:
             displayMonth.innerHTML = 'Oktober';
             break;
-        case 10:
+        case 11:
             displayMonth.innerHTML = 'November';
             break;
-        case 11:
+        case 12:
             displayMonth.innerHTML = 'December';
             break;
     }
-    
+    month = 12;
+    setCalenderDatesIds(month);//not working properly returns NaN
+    populateCellsWithCurrentMonthDates(month,year);//does display correct dates 
 }

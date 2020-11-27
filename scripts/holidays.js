@@ -4,7 +4,7 @@ async function fetchAllDays() {
         const url = 'https://api.dryg.net/dagar/v2.1/2020';
         const result = await fetch(url);
         const data = await result.json();
-        getHolidays(data);
+        getDates(data);
     }
      catch (error) {
         console.error(error);
@@ -14,14 +14,14 @@ async function fetchAllDays() {
  * Takes date from API and 
  * @param {Object} data 
  */
-function getHolidays (data) {
+function getDates (data) {
+    const weekdays = [];
     const holidays = [];
-    console.log(holidays)
     for (const day of data.dagar) {
-        if (day.helgdag) {
-            holidays.push(day);
-        }
+         if(day.veckodag){weekdays.push(day);}
+         if(day.helgdag) {holidays.push(day);}
     }
+    displayWeekdays(weekdays)
     displayHolidays(holidays);
 }
 /**
@@ -29,6 +29,7 @@ function getHolidays (data) {
  * @param {Object} holidays 
  */
 function displayHolidays(holidays) {
+    console.log(holidays)
     const dates = document.getElementsByClassName('date');
     for (const day of holidays) {
         for (const date of dates) {
@@ -37,6 +38,24 @@ function displayHolidays(holidays) {
                 let paragraph = document.createElement('p'); 
                 paragraph.className = "helgdag";
                 paragraph.innerText = day.helgdag;
+                box.appendChild(paragraph); 
+            }
+        }
+    }
+}
+/**
+ * Assigns weekday text to all dates
+ * @param {Object} weekdays
+ */
+function displayWeekdays(weekdays) {
+    const dates = document.getElementsByClassName('date');
+    for (const weekday of weekdays) {
+        for (const date of dates) {
+            if(weekday.datum === date.id) {
+                let box = document.getElementById(date.id);
+                let paragraph = document.createElement('p'); 
+                paragraph.className = "veckodag";
+                paragraph.innerText = weekday.veckodag;
                 box.appendChild(paragraph); 
             }
         }

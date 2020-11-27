@@ -1,58 +1,60 @@
-
 /**
  * takes current date and assigns to variable.
  */
 function currentDate() {
     let time = new Date();
     let today = time.getDate();
-    let month = time.getMonth()
-    let year = time.getFullYear()
     setCurrentDateStyle(today)
-    populateCellsWithCurrentMonthDates(month,year)
 } 
-
-/**
- * gets number of days in specified month
- * @param {Date} month 
- * @param {Date} year 
- */
+ /**
+  * Gets number of days in a month.
+  * @param {Date} month 
+  * @param {Date} year 
+  */
 function daysInMonth (month, year) { 
     return new Date(year, month, 0).getDate(); 
 } 
 
-function populateCellsWithCurrentMonthDates(month,year){
+/**
+ * Applies date number to DOM. checks month length.
+ * @param {Date} month 
+ * @param {Date} year 
+ */
+function populateCellsWithCurrentMonthDates(month, year){
     const dates= document.getElementsByClassName('date');
-    const thisMonthDays = daysInMonth(month, year);
-    month += 1;
+    let thisMonthDays = daysInMonth(month, year);
+    console.log(month + ' pop')
+    console.log(thisMonthDays)
     for(let i = 0; i < dates.length; i++){
         dates[i].innerText = i + 1;
-        if(dates[i].innerText >= thisMonthDays) { 
-            dates[i].innerText = '';
+        if(dates[i].innerText > thisMonthDays) { 
+            dates[i].remove();
         }
     }
 }
-
 /**
  * Adds current month date to date ID so it can be synced with dagar API.
  * takes current month and year and applies it to calendar.
+ * @param {date} month 
  */
-function setCalenderDatesIds(){  
+function setCalenderDatesIds(month){  
     let time = new Date();
-    let today = time.getDate();
-    let month = time.getMonth()
     let year = time.getFullYear()
     const dates = document.getElementsByClassName('date');
-    if(month < 10){ month = '0' + month; }
+    month = 12;
+    //undefined???
+    console.log(month + ' pop')
+    if(month < 10){ month = '0' + month;}
     for(let i = 0; i < dates.length; i++){
         if(i < 9){
-            dates[i].id = year + '-' + month + '-' + '0' + Number(i + 1);
+            dates[i].id = `${year}-${month}-0` + (i + 1);
+            //console.log(dates[i].id)
         } else if (i >= 9){
-            dates[i].id = year + '-' + month + '-' + Number(i + 1);
+            dates[i].id = `${year}-${month}-` + (i + 1);
+            //console.log(dates[i].id)
         }
     }
 }
-
-
 /**
  * Loop that applies click event to individual date element.  
  */
@@ -62,7 +64,6 @@ function selectCalendarDate(){
         dates[i].addEventListener('click',boxColorChangeActive);
     }
 }
-
 /**
  * If statements remove last 7 of the string, removing active status when other element is clicked. 
  * @param {Event} event changes color of box based on click and adds active ID.
@@ -83,7 +84,6 @@ function boxColorChangeActive(event) {
         }
     }
 }
-
 /**
  * 
  * @param {Date} today applies styling to current date of the month in the calendar.
@@ -96,7 +96,6 @@ function setCurrentDateStyle(today){
         }
     }
 }
-
 /**
  * Updates circle number based on number of items in the list. 
  */
@@ -117,7 +116,6 @@ function addDateToDoListNumber() {
         }
     }
 }
-
 /**
  * Populates dates with to do listicles that were previously saved on the specific dates. 
  */
@@ -137,7 +135,6 @@ function populateDates(){
         }
     } 
 }
-
 function applyListNumbers(paragraph){
     //console.log(paragraph)
 }
