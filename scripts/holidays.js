@@ -14,7 +14,7 @@ async function fetchAllDays() {
  * Takes date from API and 
  * @param {Object} data 
  */
-function getDates (data) {
+function getDates(data) {
     const weekdays = [];
     const holidays = [];
     for (const day of data.dagar) {
@@ -29,7 +29,6 @@ function getDates (data) {
  * @param {Object} holidays 
  */
 function displayHolidays(holidays) {
-    console.log(holidays)
     const dates = document.getElementsByClassName('date');
     for (const day of holidays) {
         for (const date of dates) {

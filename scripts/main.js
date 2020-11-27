@@ -7,7 +7,6 @@ function main() {
     currentDate();
     startClock();
     addListIds();
-    setCalenderDatesIds();
     populateDates();
     fetchAllDays();
     daysInMonth();

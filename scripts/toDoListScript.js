@@ -64,6 +64,7 @@ function selectFromList(event){
       if (event.target.id === list.id){
          list.style.color = "black";
          list.className = "focus";
+         list.id = "focus";
          list.onclick = showListItemX(list); 
          removeParagraphStyles(list);
         
@@ -73,6 +74,7 @@ function selectFromList(event){
       } else { 
          list.style.color = "black";
          list.className = " ";
+         list.id = " ";
          
       }
    } 
