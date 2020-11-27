@@ -1,11 +1,14 @@
 
+
 let listItemArray = [];
 let returnedList = [];
+
 /**
  * 
  * @param {String} li 
  */
 function addItemsToArray(li){
+   
    listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
    for(let date of dates){
@@ -18,7 +21,7 @@ function addItemsToArray(li){
       }   
    }
    addToLocalStorage(listItemArray);
-   removeListContent(listItemArray);
+   removeButton(listItemArray);
 }
 /**
  * 
@@ -26,8 +29,10 @@ function addItemsToArray(li){
  */
 function addToLocalStorage(listItemArray){
    localStorage.setItem('todos', JSON.stringify(listItemArray));
+   console.log(listItemArray);
 }
 function displayFromLocalStorage(){
+   
    const storedList = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
    for(const dateValue of storedList){
@@ -57,3 +62,4 @@ function populateList(text) {
 
 //rensa and ta bort buttons need to work.
 //set limit on month number.
+

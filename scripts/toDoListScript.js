@@ -88,12 +88,14 @@ function removeButton(){
    addDateToDoListNumber();
 }
 
+
 function clearToDoList(){
    const listItem = document.getElementsByClassName('listItem');
    while (listItem.length > 0) listItem[0].remove();
    listItemArray = [];
    returnedList = [];
 }
+
 // PARAGRAPH RED X CODE 
 /**loops trough all list items and checks which list item is clicked
  * @param {click} event  and turns it white and adds a class
@@ -149,22 +151,5 @@ function clearToDoList(){
 //       }
 //    }, 1000);
 // }
-
-/**
- * removes the list item with the class name ".focus" on it.  
- */
-
-
-function removeListContent(listItemArray){
-   const remove = document.getElementsByClassName('focus');
-   while (remove.length > 0) remove[0].remove();
-   //addToLocalStorage(listItemArray)
-}
-
-
-/**
- * clears entire to do list
- */
-
 
 
