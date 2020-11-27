@@ -4,6 +4,15 @@
     height: 100%;
     display: flex;
     padding-bottom: 1rem;
+    text-align: center;
+}
+.caption {
+    border-radius: 1rem 1rem 0 0;
+    background-color: tomato;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 table {
@@ -27,8 +36,10 @@ table {
 }
 
 .arrow {
-    font-size: 2rem;;    
-   }
+    font-size: 2rem;
+    margin: 0 2rem 0 2rem;
+}
+
 .arrow:hover {
     color: black;
     cursor: pointer;
