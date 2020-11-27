@@ -1,6 +1,5 @@
 let listItemArray = [];
 let returnedList = [];
-
 /**
  * 
  * @param {String} li 
@@ -19,7 +18,6 @@ function addItemsToArray(li){
    }
    addToLocalStorage(listItemArray)
 }
-
 /**
  * 
  * @param {Array} listItemArray 
@@ -27,7 +25,6 @@ function addItemsToArray(li){
 function addToLocalStorage(listItemArray){
    localStorage.setItem('todos', JSON.stringify(listItemArray));
 }
-
 function displayFromLocalStorage(){
    const storedList = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
@@ -40,7 +37,6 @@ function displayFromLocalStorage(){
       }
    } 
 }
-
 /**
  * 
  * @param {String} text 
@@ -59,4 +55,3 @@ function populateList(text) {
 
 //rensa and ta bort buttons need to work.
 //set limit on month number.
-//get days to line up 
