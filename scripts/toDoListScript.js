@@ -42,7 +42,7 @@ function addNewItemToList(input){
 }
 
 /** 
-* ads different ids to each list item
+* adds different ids to each list item
 * @param {string} 
 */
 function addListIds(){
@@ -55,7 +55,7 @@ function addListIds(){
 
 
 
-/**loops trough all list items and checks wich list item is clicked
+/**loops trough all list items and checks which list item is clicked
  * @param {click} event  and turns it white and adds a class
  */
 function selectFromList(event){
@@ -75,13 +75,13 @@ function selectFromList(event){
          list.className = " ";
          
       }
-   } //add splice array of seleted indexof???
+   } 
 } 
 
 
 
 /**
- * shows X when pressed specifik list
+ * shows X when pressed specific list
  * @param {string} list 
  */
 
