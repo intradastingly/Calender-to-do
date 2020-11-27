@@ -4,6 +4,15 @@
     height: 100%;
     display: flex;
     padding-bottom: 1rem;
+    text-align: center;
+}
+.caption {
+    border-radius: 1rem 1rem 0 0;
+    background-color: tomato;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 table {
@@ -26,13 +35,11 @@ table {
     box-sizing: none;
 }
 
-.monthHead {
-    width: ;
+.arrow {
+    font-size: 2rem;
+    margin: 0 2rem 0 2rem;
 }
 
-.arrow {
-    font-size: 2rem;;    
-   }
 .arrow:hover {
     color: black;
     cursor: pointer;
@@ -68,7 +75,7 @@ body {
 
 .toDoCircle {
     font-size: 0.8rem;
-    padding 0.11rem;
+    padding: 0.11rem;
     margin: 2rem 0.5rem 0.5rem auto;
     border-radius: 50%;
     background-color: red;

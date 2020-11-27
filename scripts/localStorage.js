@@ -1,14 +1,14 @@
-function currentStateLocalStorage() {
-   const storedList = JSON.parse(localStorage.getItem('todos')) || [];  
-   removeButton(storedList)
-}
+
+
+let listItemArray = [];
+let returnedList = [];
 
 /**
  * 
  * @param {String} li 
  */
 function addItemsToArray(li){
-   let listItemArray = [];
+   
    listItemArray = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
    for(let date of dates){
@@ -32,7 +32,7 @@ function addToLocalStorage(listItemArray){
    console.log(listItemArray);
 }
 function displayFromLocalStorage(){
-   let returnedList = [];
+   
    const storedList = JSON.parse(localStorage.getItem('todos')) || [];
    const dates = document.getElementsByClassName('date');
    for(const dateValue of storedList){
