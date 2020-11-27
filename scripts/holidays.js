@@ -20,21 +20,54 @@ async function fetchAllDays() {
     }
     
 }
+
 /** Filter out holidays and push them to an array  */
 function getHolidays (data) {
     const holidays = [];
-    const dates = document.getElementsByClassName('date');
-    for(const date of dates)
-    for (const day of data.dagar) {
-        if (day.helgdag) {
-            if(day.datum === date.id)
-            console.log(day.datum)
-
-            holidays.push(day);
-            
-        }
-        //console.log(holidays);
-    }
     
+    for (const day of data.dagar) {
+        
+        if (day.helgdag) {
+            holidays.push(day);
+        }
+    }
+    displayHolidays(holidays);
 }
 
+function displayHolidays(holidays) {
+    const dates = document.getElementsByClassName('date');
+    const paragraph = document.createElement('p');
+    
+    /*console.log(holidays);*/
+    
+    for (const day of holidays) {
+        for (const date of dates) {
+            /*console.log(day.veckodag);*/
+            console.log(date)
+            if(day.veckodag === date.id) {
+                console.log('test')
+                paragraph.innerText = day.veckodag;
+                dates.appendChild(paragraph);
+                
+            }
+        }
+    }
+}
+
+
+/*function displayFromLocalStorage(){
+    const storedList = JSON.parse(localStorage.getItem('todos'));
+    const dates = document.getElementsByClassName('date');
+    const display = document.getElementById('addItem');
+    const li = document.createElement("li");
+    for(const dateValue of storedList){
+       for (const date of dates){
+          if(date.id === dateValue.datum && date.classList.contains('active')){
+             li.innerText = dateValue.text;
+             console.log(date.id + ' id')
+             console.log(dateValue.text + ' test ' + dateValue.datum) 
+             console.log(li);
+          }
+       }
+    } 
+ }*/
