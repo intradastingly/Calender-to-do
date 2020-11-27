@@ -27,7 +27,7 @@ function populateCellsWithCurrentMonthDates(month, year){
     for(let i = 0; i < dates.length; i++){
         dates[i].innerText = i + 1;
         if(dates[i].innerText > thisMonthDays) { 
-            dates[i].remove();
+            dates[i].innerText = '';
         }
     }
 }
