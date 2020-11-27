@@ -21,7 +21,7 @@ function addItemsToArray(li){
       }   
    }
    addToLocalStorage(listItemArray);
-   removeButton(listItemArray);
+   //removeButton(listItemArray);
 }
 /**
  * 
