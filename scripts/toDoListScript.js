@@ -71,12 +71,11 @@ function removeButton(){
    
    const remove = document.getElementsByClassName('focus');
    const items = JSON.parse(localStorage.getItem("todos"));
- 
-   
    items.splice(items, 1);
    localStorage.setItem("todos", JSON.stringify(items));
    
-   const itemsArray = [];
+   
+   // const itemsArray = [];
 //  for(const removedItem of remove) {
 //       console.log(item)
 //    }  
