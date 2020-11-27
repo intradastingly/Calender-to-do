@@ -137,10 +137,14 @@ function clearToDoList(){
 /**
  * removes the list item with the class name ".focus" on it.  
  */
-// function removeListContent(){
-//    const remove = document.getElementsByClassName('focus');
-//    while (remove.length > 0) remove[0].remove();
-// }
+
+
+function removeListContent(listItemArray){
+   const remove = document.getElementsByClassName('focus');
+   while (remove.length > 0) remove[0].remove();
+   //addToLocalStorage(listItemArray)
+}
+
 
 /**
  * clears entire to do list

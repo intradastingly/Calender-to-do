@@ -22,8 +22,8 @@ function changeMonth(month) {
     const arrowLeft = document.getElementById('arrowLeft');
     const arrowRight = document.getElementById('arrowRight');
     
-    arrowLeft.addEventListener('click',() =>{month--; fetchMonth(month); fetchAllDays()})
-    arrowRight.addEventListener('click',() =>{month++;fetchMonth(month); fetchAllDays()})
+    arrowLeft.addEventListener('click',() =>{month--; fetchMonth(month); fetchAllDays(); populateDates();})
+    arrowRight.addEventListener('click',() =>{month++;fetchMonth(month); fetchAllDays(); populateDates();})
    
     fetchMonth(month)  
 }
@@ -74,7 +74,6 @@ function fetchMonth(month) {
             displayMonth.innerHTML = 'December';
             break;
     }
-    month = 12;
     setCalenderDatesIds(month);//not working properly returns NaN
     populateCellsWithCurrentMonthDates(month,year);//does display correct dates 
 }

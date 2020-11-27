@@ -16,7 +16,8 @@ function addItemsToArray(li){
          }
       }   
    }
-   addToLocalStorage(listItemArray)
+   addToLocalStorage(listItemArray);
+   removeListContent(listItemArray);
 }
 /**
  * 
