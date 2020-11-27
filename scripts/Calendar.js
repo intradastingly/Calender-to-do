@@ -97,7 +97,6 @@ function setCurrentDateStyle(today){
  * Updates circle number based on number of items in the list. 
  */
 function addDateToDoListNumber() {
-    console.log()
     const list = document.getElementById('ul-items').children.length;
     const dates = document.getElementsByClassName('date');
     const numberOfToDo = document.createElement('p');

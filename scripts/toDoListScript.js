@@ -68,14 +68,24 @@ function selectFromList(event){
 } 
 
 function removeButton(){
+   
    const remove = document.getElementsByClassName('focus');
-   while (remove.length > 0) remove[0].remove();
-
-
-   let items = JSON.parse(localStorage.getItem("todos"));
+   const items = JSON.parse(localStorage.getItem("todos"));
+ 
+   
    items.splice(items, 1);
    localStorage.setItem("todos", JSON.stringify(items));
-
+   
+   const itemsArray = [];
+//  for(const removedItem of remove) {
+//       console.log(item)
+//    }  
+//  for(const item of items) {
+//       console.log(item)
+//    } 
+   
+   while (remove.length > 0) remove[0].remove();
+   addDateToDoListNumber();
 }
 
 function clearToDoList(){
