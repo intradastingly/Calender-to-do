@@ -22,8 +22,8 @@ function changeMonth(month) {
     const arrowLeft = document.getElementById('arrowLeft');
     const arrowRight = document.getElementById('arrowRight');
     
-    arrowLeft.addEventListener('click',() =>{month--; fetchMonth(month);})
-    arrowRight.addEventListener('click',() =>{month++;fetchMonth(month);})
+    arrowLeft.addEventListener('click',() =>{month--; fetchMonth(month); fetchAllDays()})
+    arrowRight.addEventListener('click',() =>{month++;fetchMonth(month); fetchAllDays()})
    
     fetchMonth(month)  
 }
