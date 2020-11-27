@@ -114,9 +114,10 @@ function removeParagraphStyles(list) {
 /**
  * removes the list item with the class name ".focus" on it.  
  */
-function removeListContent(){
+function removeListContent(listItemArray){
    const remove = document.getElementsByClassName('focus');
    while (remove.length > 0) remove[0].remove();
+   //addToLocalStorage(listItemArray)
 }
 
 /**
