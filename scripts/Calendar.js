@@ -44,10 +44,8 @@ function setCalenderDatesIds(month){
     for(let i = 0; i < dates.length; i++){
         if(i < 9){
             dates[i].id = `${year}-${month}-0` + (i + 1);
-            //console.log(dates[i].id)
         } else if (i >= 9){
             dates[i].id = `${year}-${month}-` + (i + 1);
-            //console.log(dates[i].id)
         }
     }
 }
@@ -103,10 +101,6 @@ function addDateToDoListNumber() {
     for(const date of dates){
         if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
-           /*  if(date.children.length > 1){
-                date.childNodes[2].remove();
-                //apply different fix than increasing node value to 3. 
-            } */
         }
     }
 }
