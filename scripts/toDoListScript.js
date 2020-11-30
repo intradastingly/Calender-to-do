@@ -5,9 +5,6 @@ function eventListenersButtons(){
    const confirm = document.getElementById('confirmAddItem'); 
    confirm.onclick = takeInput; 
 
-   const clear = document.getElementById('clear');
-   clear.onclick = clearToDoList;
-
    const remove = document.getElementById('removeItem'); 
    remove.onclick = removeButton;
 }
@@ -68,32 +65,29 @@ function selectFromList(event){
 } 
 
 function removeButton(){
-   
    const remove = document.getElementsByClassName('focus');
    const items = JSON.parse(localStorage.getItem("todos"));
-   items.splice(items, 1);
-   localStorage.setItem("todos", JSON.stringify(items));
-   
-   
-   // const itemsArray = [];
-//  for(const removedItem of remove) {
-//       console.log(item)
-//    }  
-//  for(const item of items) {
-//       console.log(item)
-//    } 
-   
+   for(let i = 0; i < items.length; i++) {
+      for(const removedItem of remove) {
+         if(removedItem.innerText === items[i].text){
+            items.splice(i, 1);
+         }
+      } 
+   }  
+   localStorage.setItem("todos", JSON.stringify(items)); 
    while (remove.length > 0) remove[0].remove();
    addDateToDoListNumber();
 }
 
 
-function clearToDoList(){
-   const listItem = document.getElementsByClassName('listItem');
-   while (listItem.length > 0) listItem[0].remove();
-   listItemArray = [];
-   returnedList = [];
-}
+ /*   if(itemsArray.=='seven'){
+               array.splice(i,1);
+               break;
+           } */
+           
+            // items.splice(items, 1);
+            // console.log(removedItem);
+
 
 // PARAGRAPH RED X CODE 
 /**loops trough all list items and checks which list item is clicked

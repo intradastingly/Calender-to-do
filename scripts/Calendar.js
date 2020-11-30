@@ -70,7 +70,6 @@ function boxColorChangeActive(event) {
         if(date.id === event.target.id){
             date.style.backgroundColor = "rgb(255, 255, 255)";
             setTimeout(function(){date.classList.add("active");},1);
-            clearToDoList();
             displayFromLocalStorage();
             addListIds();
             addDateToDoListNumber();
@@ -104,7 +103,7 @@ function addDateToDoListNumber() {
     for(const date of dates){
         if(date.classList.contains('active')){
             date.appendChild(numberOfToDo);
-            /* if(date.children.length > 1){
+           /*  if(date.children.length > 1){
                 date.childNodes[2].remove();
                 //apply different fix than increasing node value to 3. 
             } */

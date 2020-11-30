@@ -27,9 +27,8 @@ function addItemsToArray(li){
  * 
  * @param {Array} listItemArray 
  */
-function addToLocalStorage(listItemArray){
+function addToLocalStorage(){
    localStorage.setItem('todos', JSON.stringify(listItemArray));
-   console.log(listItemArray);
 }
 function displayFromLocalStorage(){
    
@@ -49,15 +48,15 @@ function displayFromLocalStorage(){
  * @param {String} text 
  */
 function populateList(text) {
-   const display = document.getElementById('ul-items');
+   const toDoUl = document.getElementById('ul-items');
    let li = document.createElement('li');
    returnedList.push(text)
    for(const listItem of returnedList){
       li.appendChild(document.createTextNode(text)); 
-      display.appendChild(li);
+      toDoUl.appendChild(li);
       li.className = "listItem";
-      returnedList = []
-   }
+      returnedList = [];
+   } 
 }
 
 //rensa and ta bort buttons need to work.

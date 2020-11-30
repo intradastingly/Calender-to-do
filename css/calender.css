@@ -7,6 +7,7 @@
     text-align: center;
 }
 .caption {
+    padding: 0.8rem 0rem 0.8rem 0rem;
     border-radius: 1rem 1rem 0 0;
     background-color: tomato;
     text-align: center;
@@ -23,25 +24,17 @@ table {
     table-layout: fixed;
 }
 
-.thHead {
-    width: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: tomato;
-    color:white;
-    border-radius: 1rem 1rem 0 0;
-    padding: 0.5rem;
-    text-align: left;
-    box-sizing: none;
-}
-
 .arrow {
     font-size: 2rem;
     margin: 0 2rem 0 2rem;
 }
 
+.arrow:active {
+    color: white;
+    cursor: pointer;
+}
+
 .arrow:hover {
-    color: black;
     cursor: pointer;
 }
 
@@ -61,16 +54,6 @@ th.smaller {
     background-color: rgb(255, 147, 147);
    height: 2rem;
    color: white;
-}
-
-body {
-    display: flex;
-}
-.sunday {
-    background-color: rgb(255, 165, 149);
-}
-.saturday {
-    background-color: rgb(253, 218, 205);
 }
 
 .toDoCircle {
