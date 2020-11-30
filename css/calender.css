@@ -7,6 +7,7 @@
     padding-bottom: 1rem;
     text-align: center;
 }
+
 .caption {
     padding: 0.8rem 0rem 0.8rem 0rem;
     border-radius: 1rem 1rem 0 0;
@@ -16,7 +17,9 @@
     align-items: center;
     width: 100%;
 }
-
+#year {
+    padding-left: 0.5rem;
+}
 table {
     width: 100%;
     height: 100%;
