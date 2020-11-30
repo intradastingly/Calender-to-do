@@ -9,6 +9,7 @@ function currentDate() {
 
 /**
  * Gets number of days in a month.
+ * Code borrowed from stackoverflow.
  * @param {Date} Year
  * @param {Date} Month 
  * @returns {Date} 
@@ -115,17 +116,23 @@ function addDateToDoListNumber() {
 
 /**
  * Populates dates with to do listicles that were previously saved on the specific dates. 
+ * Updates number to reflect amount of todos in list. 
  */
 function populateDates() {
     const storedList = JSON.parse(localStorage.getItem('todos')) || [];
     const dates = document.getElementsByClassName('date');
-    for (const dateValue of storedList) {
+    var counts = {};
+    for (let i = 0; i < storedList.length; i++) {
+        //Code borrowed from stackoverflow.
+        let num = storedList[i].datum;
+        counts[num] = counts[num] ? counts[num] + 1 : 1;
+        //Code borrowed from stackoverflow.
         for (const date of dates) {
-            if (date.id === dateValue.datum) {
+            if (date.id === storedList[i].datum) {
                 let box = document.getElementById(date.id);
                 let paragraph = document.createElement('p');
                 paragraph.className = "toDoCircle";
-                paragraph.innerHTML = "!";
+                paragraph.innerHTML = counts[num];
                 box.appendChild(paragraph);
             }
         }
