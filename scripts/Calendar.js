@@ -121,7 +121,7 @@ function addDateToDoListNumber() {
 function populateDates() {
     const storedList = JSON.parse(localStorage.getItem('todos')) || [];
     const dates = document.getElementsByClassName('date');
-    var counts = {};
+    const counts = {};
     for (let i = 0; i < storedList.length; i++) {
         //Code borrowed from stackoverflow.
         let num = storedList[i].datum;
