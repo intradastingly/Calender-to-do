@@ -21,9 +21,9 @@ function daysInMonth (month, year) {
  * @param {Date} year 
  */
 function populateCellsWithCurrentMonthDates(month, year){
+    month++;
     const dates= document.getElementsByClassName('date');
     let thisMonthDays = daysInMonth(month, year);
-    //console.log(thisMonthDays)
     for(let i = 0; i < dates.length; i++){
         dates[i].innerText = i + 1;
         if(dates[i].innerText > thisMonthDays) { 
@@ -40,6 +40,7 @@ function setCalenderDatesIds(month){
     let time = new Date();
     let year = time.getFullYear()
     const dates = document.getElementsByClassName('date');
+    month++;
     if(month < 10){ month = '0' + month;}
     for(let i = 0; i < dates.length; i++){
         if(i < 9){
@@ -124,7 +125,5 @@ function populateDates(){
         }
     } 
 }
-function applyListNumbers(paragraph){
-    //console.log(paragraph)
-}
+
 
