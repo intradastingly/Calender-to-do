@@ -1,39 +1,48 @@
 /** Get the current date */
 function getDate() {
-    
     const date = new Date();
-    
     getMonth(date)
-}  
+}
 
 /** Get the current month
- * @param {date} currentDate
+ * @param {Date} date
  */
 function getMonth(date) {
     let month = date.getMonth();
     changeMonth(month);
 }
 
-/** Get the eventlisteners for the arrowkeys to switch between months in the calendar */
+/** Get the eventlisteners for the arrows to switch between months in the calendar
+ * @param {Date} month  
+ * */
 function changeMonth(month) {
-    
     const arrowLeft = document.getElementById('arrowLeft');
-    const arrowRight = document.getElementById('arrowRight');
-    
-    arrowLeft.addEventListener('click',() =>{month--; fetchMonth(month); fetchAllDays(); populateDates();})
-    arrowRight.addEventListener('click',() =>{month++;fetchMonth(month); fetchAllDays(); populateDates();})
-    
-    fetchMonth(month)  
+    const arrowRight = document.getElementById('arrowRight')
+
+    arrowLeft.addEventListener('click', () => {
+        month--;
+        fetchMonth(month);
+        fetchAllDays();
+        populateDates();
+    })
+    arrowRight.addEventListener('click', () => {
+        month++;
+        fetchMonth(month);
+        fetchAllDays();
+        populateDates();
+    })
+
+    fetchMonth(month)
 }
 
-/** Fetch the current month and display the current month in calendar.
- * @param {Month} month 
+/** Fetch the current month and display the current month in calendar header.
+ * @param {Date} month 
  * */
 function fetchMonth(month) {
     let time = new Date();
     let year = time.getFullYear()
     let displayMonth = document.getElementById('currentMonth');
-    month = month % 12;     
+    month = month % 12;
     switch (month) {
         case 0:
             displayMonth.innerHTML = 'Januari';
@@ -70,8 +79,8 @@ function fetchMonth(month) {
             break;
         case 11:
             displayMonth.innerHTML = 'December';
-            break;        
-     }      
-    setCalenderDatesIds(month);//not working properly returns NaN
-    populateCellsWithCurrentMonthDates(month,year);//does display correct dates 
+            break;
+    }
+    setCalenderDatesIds(month);
+    populateCellsWithCurrentMonthDates(month, year);
 }

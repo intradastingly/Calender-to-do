@@ -1,5 +1,8 @@
-window.addEventListener('load',main);
+window.addEventListener('load', main);
 
+/**
+ * Calls all functions on window load. 
+ */
 function main() {
     getDate()
     selectCalendarDate();
@@ -10,5 +13,4 @@ function main() {
     populateDates();
     fetchAllDays();
     daysInMonth();
-    //currentStateLocalStorage();
 }

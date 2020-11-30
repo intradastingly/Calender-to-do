@@ -1,53 +1,44 @@
-
-//added onload function to main
-
 /** Function that starts the clock and update it every 1s */
 function startClock() {
     updateClock();
     setInterval(updateClock, 1000);
-
 }
 
 /** Updates time and date, and takes in a variable that fetch current date/time */
 function updateClock() {
     let time = new Date();
-    
     getTime(time);
     showWeekday(time);
     showCurrentDate(time);
-
 }
 
-/** Fetch time ands shows current time */
+/**
+ *  Fetch time ands shows current time 
+ * @param {Date} time
+*/
 function getTime(time) {
     let hours = time.getHours();
     let minutes = time.getMinutes();
     let seconds = time.getSeconds();
-   
     if (hours < 10) {
         hours = '0' + hours;
-    }
-    if (minutes < 10) {
+    } if (minutes < 10) {
         minutes = '0' + minutes;
-    }
-    if (seconds < 10) {
+    } if (seconds < 10) {
         seconds = '0' + seconds;
     }
-
     const timeContainer = document.getElementById('showTime');
     timeContainer.innerHTML = hours + ':' + minutes + ':' + seconds;
-
-
 }
 
-/** Shows weekday. Switch statement takes weekday index and change it to letters, Måndag, tisdag etc.*/
+/** 
+ * Shows weekday. Switch statement takes weekday index and change it to letters, Måndag, tisdag etc.
+ * @param {Date} time
+*/
 function showWeekday(time) {
     let weekday = time.getDay();
-    
     const weekDayContainer = document.getElementById('showDay');
     weekDayContainer.innerHTML = weekday;
-
-    
     switch (weekday) {
         case 1:
             weekDayContainer.innerHTML = 'Måndag';
@@ -70,21 +61,18 @@ function showWeekday(time) {
         case 7:
             weekDayContainer.innerHTML = 'Söndag';
             break;
-
     }
-
-
 }
 
-/** Shows date and month. Switch statement takes month index and change it to letters, januar, februari.. etc.*/
+/** 
+ * Shows date and month. Switch statement takes month index and change it to letters, januar, februari.. etc.
+ * @param {Date} time 
+ */
 function showCurrentDate(time) {
     let today = time.getDate();
     let month = time.getMonth();
-
-   
     let todaysDate = document.getElementById('showDate');
     todaysDate.innerHTML = today + ' ' + month;
-
     switch (month) {
         case 0:
             todaysDate.innerHTML = today + ' ' + 'Januari';
@@ -122,7 +110,6 @@ function showCurrentDate(time) {
         case 11:
             todaysDate.innerHTML = today + ' ' + 'December';
             break;
-
     }
 }
 
