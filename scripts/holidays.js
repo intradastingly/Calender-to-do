@@ -6,20 +6,20 @@ async function fetchAllDays() {
         const data = await result.json();
         getDates(data);
     }
-     catch (error) {
+    catch (error) {
         console.error(error);
-    }   
+    }
 }
 /**
- * Takes date from API and 
+ * Takes date from API and finds weekdays and holidays.
  * @param {Object} data 
  */
 function getDates(data) {
     const weekdays = [];
     const holidays = [];
     for (const day of data.dagar) {
-         if(day.veckodag){weekdays.push(day);}
-         if(day.helgdag) {holidays.push(day);}
+        if (day.veckodag) { weekdays.push(day); }
+        if (day.helgdag) { holidays.push(day); }
     }
     displayWeekdays(weekdays)
     displayHolidays(holidays);
@@ -32,12 +32,12 @@ function displayHolidays(holidays) {
     const dates = document.getElementsByClassName('date');
     for (const day of holidays) {
         for (const date of dates) {
-            if(day.datum === date.id) {
+            if (day.datum === date.id) {
                 let box = document.getElementById(date.id);
-                let paragraph = document.createElement('p'); 
+                let paragraph = document.createElement('p');
                 paragraph.className = "helgdag";
                 paragraph.innerText = day.helgdag;
-                box.appendChild(paragraph); 
+                box.appendChild(paragraph);
             }
         }
     }
@@ -50,12 +50,12 @@ function displayWeekdays(weekdays) {
     const dates = document.getElementsByClassName('date');
     for (const weekday of weekdays) {
         for (const date of dates) {
-            if(weekday.datum === date.id) {
+            if (weekday.datum === date.id) {
                 let box = document.getElementById(date.id);
-                let paragraph = document.createElement('p'); 
+                let paragraph = document.createElement('p');
                 paragraph.className = "veckodag";
                 paragraph.innerText = weekday.veckodag;
-                box.appendChild(paragraph); 
+                box.appendChild(paragraph);
             }
         }
     }

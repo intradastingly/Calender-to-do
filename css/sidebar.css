@@ -1,3 +1,5 @@
+/* Sidebar styling */
+
 @font-face{
     font-family:'digital-clock-font';
     src: url('../font/digital-7.ttf');
@@ -14,7 +16,6 @@ aside {
 }
 
 /* To Do buttons with inputs */
-
 .input {
     all: unset;
     height: 2rem;
@@ -33,7 +34,6 @@ aside {
     padding: .4rem 0;
     background-color:tomato;
     margin-left: .5rem;
-   
     text-decoration: solid ;
     color: white;
 }
@@ -58,7 +58,6 @@ aside {
 }
 
 /* Ul List */
-
 .listContainer {
     display: flex;
     width: 14rem;
@@ -84,7 +83,6 @@ li {
     cursor: pointer;
 }
 
-
 /* Time display */
 .timeSection {
     margin: 2rem auto 2rem auto;
@@ -108,34 +106,4 @@ li {
 }
 .timeMonth {
     display: flex;
-}
-
-.red {
-    color: red;
-}
-
-.x {
-    font-size: .8rem;
-    color: white;
-    width: 1rem;
-    height: 1rem;
-    background-color: red;
-    margin-top: -1.2rem;
-    margin-left: -3rem;
-    border-radius: 1rem;
-}
-
-.unsetX {
-    color: green;
-}
-
-.btn-add:hover {
-    font-size: .8rem;
-    color: white;
-    width: 1rem;
-    height: 1rem;
-    background-color: red;
-    margin-top: -1.2rem;
-    margin-left: -3rem;
-    border-radius: 1rem;
 }
