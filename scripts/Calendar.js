@@ -68,12 +68,13 @@ function boxColorChangeActive(event) {
         if(date.id === event.target.id){
             date.style.backgroundColor = "rgb(255, 255, 255)";
             setTimeout(function(){date.classList.add("active");},1);
+            clearToDoList();
             displayFromLocalStorage();
             addListIds();
             addDateToDoListNumber();
         } else {
             date.classList.remove('active');
-            date.style.backgroundColor = ""; 
+            date.style.backgroundColor = "";    
         }
     }
 }
@@ -118,7 +119,7 @@ function populateDates(){
                 paragraph.className = "toDoCircle";
                 paragraph.innerHTML = "!";
                 box.appendChild(paragraph);   
-                applyListNumbers(paragraph);  
+                applyListNumbers(paragraph);    
            }
         }
     } 
