@@ -110,6 +110,8 @@ function addDateToDoListNumber() {
     for (const date of dates) {
         if (date.classList.contains('active')) {
             date.appendChild(numberOfToDo);
+        }else if (list === 0){
+            numberOfToDo.remove()
         }
     }
 }
