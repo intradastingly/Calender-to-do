@@ -118,7 +118,7 @@ function addDateToDoListNumber() {
 
 /**
  * Populates dates with to do listicles that were previously saved on the specific dates. 
- * Updates number to reflect amount of todos in list. 
+ * Updates number from local storage to reflect amount of todos in list. 
  */
 function populateDates() {
     const storedList = JSON.parse(localStorage.getItem('todos')) || [];
