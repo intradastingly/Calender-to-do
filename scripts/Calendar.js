@@ -37,7 +37,7 @@ function populateCellsWithCurrentMonthDates(month, year) {
 
 /**
  * Adds current month date to date ID so it can be synced with dagar API.
- * takes current month and and applies it to calender.
+ * takes current month and applies it to calender.
  * @param {date} month 
  */
 function setCalenderDatesIds(month) {
