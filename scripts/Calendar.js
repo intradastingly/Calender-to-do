@@ -73,7 +73,7 @@ function boxColorChangeActive(event) {
     for (const date of dates) {
         if (date.id === event.target.id) {
             date.style.backgroundColor = "rgb(255, 255, 255)";
-            setTimeout(function () { date.classList.add("active"); }, 1);
+            setTimeout( () => { date.classList.add("active"); }, 1);
             clearToDoList();
             displayFromLocalStorage();
             addListIds();
