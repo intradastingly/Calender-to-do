@@ -15,4 +15,4 @@ För att lägga till i 'Att göra lista': Markera dag och sedan skriv i fältet 
 För att ta bort: Klicka på todon du vill ta bort så att färgen ändras till röd och sedan klicka på ta bort för att ta bort den.
 Dubbelklicka på vald dag för att få upp dagens 'Att göra lista'.
 
-klicka  för att visa kalendern [Här](https://intradastingly.github.io/Calender-to-do/)
+klicka [Här](https://intradastingly.github.io/Calender-to-do/) för att visa kalendern. 
