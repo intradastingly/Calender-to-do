@@ -33,9 +33,12 @@ aside {
     border-radius: 2rem;
     padding: .4rem 0;
     background-color:tomato;
-    margin-left: .5rem;
     text-decoration: solid ;
     color: white;
+}
+
+.btn-2 {
+    margin-right: .2rem;
 }
 .btn:hover, .btn-add:hover, .btn-clear:hover {
     background-color:hsla(0, 76%, 33%, 0.637);
