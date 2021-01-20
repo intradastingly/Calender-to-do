@@ -1,7 +1,11 @@
+
+
 /** Fetch all days from the API for year 2020 */
 async function fetchAllDays() {
+    let year = new Date();
+    year = year.getFullYear();
     try {
-        const url = 'https://api.dryg.net/dagar/v2.1/2020';
+        const url = `https://api.dryg.net/dagar/v2.1/${year}`;
         const result = await fetch(url);
         const data = await result.json();
         getDates(data);

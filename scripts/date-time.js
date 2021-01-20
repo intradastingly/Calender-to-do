@@ -10,6 +10,7 @@ function updateClock() {
     getTime(time);
     showWeekday(time);
     showCurrentDate(time);
+    currentYear(time);
 }
 
 /**
@@ -113,4 +114,8 @@ function showCurrentDate(time) {
     }
 }
 
-
+function currentYear(time) {
+    let currentYear = time.getFullYear();
+    let year = document.getElementById('year');
+    year.innerHTML = currentYear;
+}
